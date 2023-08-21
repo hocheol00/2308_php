@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- form태그 : 정보를 제출하기 위하여 범위를 지정하는 역할을 합니다
+		1. label 태그 : for과 input 태그 id 의 값이 일치 해야합
+		2.값이 중복 되면 안됨
+		
+		submit태그 : 제출 버튼
+		maxlength : input 안에 최대 글자 수
+		number : 숫자만 입력 가능 "min = 최소 , max = 최대"
+		range : 스크롤바
+		name : 데이터 받을때 묶인 형태로 온다 (항상적으면 좋다)
+		radio : 체크박스와 다르게 한개만 한개만 선택 가능 (중복 선택 x)
+		checkbox : 여러 보기를 선택 (중복선택 가능)
+		reset : 초기화 버튼
+		placeholder : 유저한테 보여지는 위치알려주기
+		value : 입력값
+		required : 필수 입력란 으로 사용
+		readonly : 유저는 읽기만 가능 , 유저가 직접적으로 수정 하지 못하게
+		hidden : 
+		<fieldset : 테두리 , legend : fieldset 같이 사용되는 텍스트
+		select : 드롭다운 메뉴를 삽입할 떄 기본적으로 보여줄 항목 지정
+	-->
+	<form action="">
+		<fieldset>
+			<legend>기본사항</legend>
+		<label for="id">ID : </label>
+		<input type="text" name="id" id="id" maxlength="5" placeholder="아이디">
+		<br>
+		<label for="pw">PW : </label>
+		<input type="password" name="pw" id="pw" required>
+		<br>
+		<label for="txta">기타 : </label>
+		<textarea name="txta" id="txta" cols="30" rows="10"></textarea>
+		<br>
+		<label for="poketmon">poketmon</label>
+		<select name="poketmon" id="poketmon">
+		<option value="0">피카츄</option>
+		<option value="1">라이츄</option>
+		<option value="2">파이리</option>
+
+		</select>
+	</fieldset>
+		<br>
+		<label for="email">email : </label>
+		<input type="email" name="email" id="email" readonly value="변경불가">
+		<br>
+		<label for="number">number : </label>
+		<input type="number" id="number" min="0" max="5">
+		<br>
+		<label for="range">range : </label>
+		<input type="range" id="range" min="0" max="10">
+		<br>
+		<label for="date">date : </label>
+		<input type="date" id="date">
+
+		<br>
+		<label for="banana">바나나</label>
+		<input type="checkbox" id="banana" name="chk_fruit">
+	
+		<label for="wm">수박</label>
+		<input type="checkbox" id="wm" name="chk_fruit">
+		 
+		<br>
+		<label for="zz">짜장면</label>
+		<input type="radio" id="zz" name="foods">
+		<label for="ta">탕수육</label>
+		<input type="radio" id="ta" name="foods">
+
+		<br>
+		<!-- <input type="submit">
+		<input type="reset"> -->
+
+		<button type="submit">전송</button>
+		<button type="reset">초기화</button>
+		<button type="button">버튼</button>
+
+		<!-- <button type="button">버튼</button>  지금 사용 x-->
+
+		<input type="hidden" value="히든" name="hidden">
+
+	</form>
+</body>
+</html>
