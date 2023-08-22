@@ -1,0 +1,27 @@
+.div1 {
+	color: white;
+	background-color: black;
+	text-align: left;
+	font-size: 15px;
+}
+div {
+	text-align: center;
+	
+	line-height: 2em;
+	
+	border: 1px solid rgb(167, 167, 167);
+	width: 700px;
+}
+.red {
+	color: red;
+	font-size: 1.5em;
+}
+.blue {
+	color: green;
+}
+.small {
+	font-size: 0.7em;
+}
+p {
+	font-size: 1.2em;
+}

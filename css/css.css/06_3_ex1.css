@@ -1,0 +1,27 @@
+/* *는 전체 선택자 */
+* {
+	color: skyblue;
+}
+
+/* 타입선택자 : 특정 태그 이름을 가진 모든 요소 */
+h1 {
+	color: red;
+}
+
+
+/* 클래스 선택자 */
+.font-color{
+	color: orange;
+}
+
+/* ID 선택자 
+기본태그 뒤에 id태그 사용*/
+#p1 {
+	color: black;
+}
+
+
+/* 그룹 선택자 */
+em, strong {
+	color: purple;
+}

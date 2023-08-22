@@ -1,0 +1,18 @@
+body {
+	font-size: 14px;
+}
+
+.font {
+	color: rgb(167, 0, 0);
+	font-size: 1.2rem;
+	line-height: 40px;
+	font-weight: 1000;
+}
+.a1 {
+	list-style-type: none;
+	
+}
+div {
+	border : 1px solid black;
+	width: 450px;
+}

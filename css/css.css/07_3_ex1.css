@@ -1,0 +1,15 @@
+.h2-name {
+	color: aqua;
+}
+.h2-hex {
+	color: #00ff80;
+}
+.h2-rgb {
+	color: rgb(189, 128, 168);
+}
+.h2-rgba {
+	color: rgba(0, 255, 255, 0.3);
+}
+.h2-hsla {
+	color: hsl(0, 100%, 50%);
+}

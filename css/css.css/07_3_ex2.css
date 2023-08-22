@@ -1,0 +1,21 @@
+.deco {
+	text-decoration: none;
+	text-decoration: underline; /* 밑줄 */
+	text-decoration: line-through; /* 취소선 */
+	}
+
+	.height {
+		line-height: 2em;
+	}
+	.left {
+		text-align: left;
+	}
+	.right {
+		text-align: right;
+	}
+	.center {
+		background-color: cadetblue;
+		height: 300px;
+		line-height: 300px;
+		text-align: center;
+	}

@@ -1,0 +1,14 @@
+.cook1 {
+	list-style-type: none; /* li 사용시 블록 없애기*/
+	list-style-type: decimal; /* 숫자 순서 주기*/
+	list-style-type: upper-alpha; /*대문자 영어순거*/
+	list-style-type: lower-alpha; /*소문자 */
+} 
+
+.cook2 {
+	list-style-position: outside;
+}
+
+.cook3 {
+	list-style-image: url(../img/IMG_0686.jfif);
+}
