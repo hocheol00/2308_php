@@ -1,0 +1,29 @@
+.bgc {
+    background-color: black;
+}
+.whc {
+    color: white;
+}
+.f_red {
+    color: red;
+}
+.main_font {
+    color: blue;
+}
+.border {
+    border: 1px solid black;
+}
+.test_center {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+.ora-font {
+    color: orange;
+}
+.h2-fs {
+    font-size: 1.5em;
+}
+.small-s {
+    font-size: 0.7em;
+}
