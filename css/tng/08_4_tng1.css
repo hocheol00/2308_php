@@ -1,0 +1,23 @@
+.line {
+	display: inline-block ;
+	padding: 30px;
+	margin-right: -6px;
+	background-color: grey;
+	
+	/* 텍스트 어라인 사용시
+	width, height 값이 정해저있는 경우
+	text-align: center;
+	height: 80px;
+	width: 80px;
+	line-height: 80px; */
+}
+.list-s {
+	list-style-type: none;
+
+	/* 현업에서는 margin대신 
+	display: flex; 사용*/
+}
+
+/* inline tag : span tag, img src tag,
+a tag */
+
