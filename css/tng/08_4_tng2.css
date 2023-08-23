@@ -1,0 +1,35 @@
+.container {
+	width: 600px;
+	height: 300px;
+}
+header {
+background-color: aqua;
+height: 60px;
+}
+.side_1 {
+	float: left;
+	background-color: antiquewhite;
+	height: 300px;
+	width: 25%;	
+}
+article {
+	background-color: rgb(120, 120, 209);
+	height: 300px;
+	width: 55%;
+	float: left;	
+}
+.side_2 {
+	float: left;
+	background-color: antiquewhite;
+	height: 300px;
+	width: 20%;	
+}
+footer {
+	background-color: green;
+	clear: both;
+	height: 50px;
+	
+}
+/* float 가로로 위치하고싶을때 사용
+	left가 암묵적인 룰
+	 */
