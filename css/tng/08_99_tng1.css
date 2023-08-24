@@ -1,0 +1,20 @@
+
+.header {
+	width: 800px;
+	margin: 0px auto;
+}
+.main_1 {
+	border: 1px dotted #000;
+	float: left;
+	width: 350px;
+	height: 200px;
+	padding: 10px;
+	margin: 10px;
+}
+.footer {
+	clear: both;
+	color: white;
+	padding: 30px;
+	text-align: center;
+	background-color: #000;
+}

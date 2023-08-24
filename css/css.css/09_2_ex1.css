@@ -1,0 +1,17 @@
+/* .div-img {
+    background-image: url(../img/dog.jpg);
+    width: 500px;
+    height: 500px;
+    border: 1px solid #000;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+   
+} */
+body {
+    background-image: url(../img/dog.jpg);
+    background-size: cover;   
+}
+    /* backgriund-image :
+        html요소에 배경이미지를 지정합니다*/
+    /* overflow: scroll; : content가 넘칠때 스크롤 사용 */

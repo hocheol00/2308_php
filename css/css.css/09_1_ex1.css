@@ -1,0 +1,8 @@
+h1 {
+	background-color: rgb(67, 179, 95);
+	border: 10px dotted #000;
+	background-clip: content-box;
+	display: inline-block;
+	height: 50px;
+	padding: 10px;
+}
