@@ -1,0 +1,30 @@
+body {
+    background-color: #000;
+}
+.container {
+    background:  white;
+    margin: 0px auto;
+    width: 500px;
+    height: 700px;
+    padding: 20px;
+    
+
+}
+h1 {
+    background-color: green;
+    text-align: center;
+    margin: 0px auto;
+    padding: 20px;
+    color: white;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    color: red;
+}
+p {
+    text-indent: 3rem;
+    margin: 10px;
+}
+
