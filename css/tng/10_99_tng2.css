@@ -1,0 +1,26 @@
+.container {
+	margin: 0px;
+
+}
+.section {
+	list-style: none;
+	
+}
+.section li:last-of-type{
+	border: none;
+	
+}
+li {
+	float: left;
+	background-color: grey;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border-right:1px solid #000;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}

@@ -1,0 +1,16 @@
+/* 상위요소 하위요소 */
+header div span {
+	color: red;
+}
+/* 부모요소 > 하위요소 : 기호 표시해서 부모 자식 요소를 구분
+/* header>span {
+	color:aqua;
+} */
+/* 형제요소 + 형제요서 : 인접 형제 스타일 적용 */
+/* span+p {
+	color: blue;
+} */ 
+span~p {
+	color: blueviolet;
+}
+

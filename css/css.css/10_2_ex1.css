@@ -1,0 +1,26 @@
+/* [속성명] : 특정 속성이 있는 요소 선택*/
+[target] {
+	color: green;
+}
+/* [속성명 =속성값]: 속성 값과 일치하는 요소 선택 */
+[target=daum] {
+	color: blue;
+}
+/* [class~=att_class] {
+	color: chocolate;
+} */
+[class|=att] {
+	color: yellowgreen;
+}
+
+/* [속성명* = 속성값] : 일부 속성 값이 일치하는 */
+/* [class*=att_class] {
+	color: brown;
+} */
+
+[class^=co] {
+	color: deeppink;
+}
+[class$=k1] {
+	color: darkkhaki;
+}
