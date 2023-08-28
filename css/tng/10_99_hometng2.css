@@ -1,0 +1,57 @@
+ul {
+    list-style-type: none;
+    font-weight: bolder;
+    width: 500px;
+    margin: 0px auto;
+    
+}
+h1 {
+    color: slateblue;
+}
+
+#name:focus  {
+    outline: none;
+    border: 2px solid red;
+}
+#age:focus {
+    outline: none;
+    border: 2px solid red;
+}
+#main:focus {
+    outline: none;
+    border: 2px solid red;
+}
+#sex:checked + label {
+    color: red;
+}
+#sexy:checked + label {
+    color: red;
+}
+.left {
+    float: left;
+    margin-right: 10px;
+}
+.footer {
+    position: relative;
+    
+}
+.send:hover + .send_1 {
+    display: block;
+}
+
+
+.send_1 {
+    background-color: #000;
+    color: white;
+    width: 17rem;
+    padding: 2px;
+    display: none;
+    position: absolute;
+    left: 50px;
+    bottom : 0px;
+}
+.red::before {
+    content:'*';
+    color: red;
+}
+

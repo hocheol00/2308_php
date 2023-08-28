@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./10_99_hometng2.css">
+</head>
+<body>
+    <form action="">
+        <ul>
+            <fieldset><legend><h1>다시 연습 함</h1></legend>
+                <li class="red"><label for="name">이름</label>
+                    <input type="text" id="name" required>
+                </li>
+                <br>
+                <li class="red"><label for="age">나이</label>
+                    <input type="number" id="age" required min="20">
+                </li>
+                <br>
+                <li class="red"><label for="gender">성별</label>
+                    <input type="radio" id="sex" name="sex_1">
+                    <label for="sex">남자</label>
+                    <input type="radio" id="sexy" name="sex_1">
+                    <label for="sexy">여자</label>
+                </li>
+                <br>
+                <li class="left">
+                    <label for="memo">요청사항</label>
+                </li>
+                
+                <li>
+                    <textarea name="main_1" id="main" cols="30" rows="10" placeholder="요청 사항 입력"></textarea>
+                </li>
+                <div class="footer">
+                    <button class="send">보내기</button>
+                    <span class="send_1">다시 한번 확인 하시고 눌러주세요</span>
+                </div>
+
+            </fieldset>
+        </ul>
+    </form>
+</body>
+</html>
