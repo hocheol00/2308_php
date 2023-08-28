@@ -1,0 +1,19 @@
+.container {
+	display: flex;
+}
+.ball {
+	width: 50px;
+	height: 50px;
+	background-color: cornflowerblue;
+	border-radius: 50%;
+	animation: moveupdown 1s ease-in-out infinite alternate;
+}
+
+@keyframes moveupdown {
+	from {
+		transform: translatey(0);
+	}
+	to {
+		transform: translatey(100px);
+	}
+}

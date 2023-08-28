@@ -1,0 +1,68 @@
+form {
+	
+	width: 500px;
+	margin: 0px auto;
+}
+h1 {
+	color: pink;
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+	font-weight: bold; 
+	
+}
+li {
+	list-style-type: none;
+	font-weight: ;
+}
+
+
+input:checked + label{
+	color: red;
+}
+#id:focus {
+	outline: none;
+	border: 2px solid red;
+}
+#age:focus {
+	outline: none;
+	border: 2px solid red;
+}
+#memo:focus {
+	outline: none;
+	border: 2px solid red;
+}
+#memo {
+	margin-left: 10px;
+}
+#memo_0 {
+	float: left;
+}
+#na::before {
+	content: '*';
+	color: red;
+}
+.aa {
+	position: absolute;
+	left: 60px;
+	bottom:0px;
+	width: 130px;
+	padding: 0;
+	margin: 0;
+	display: none;
+	text-align: center;
+	background-color: #000;
+	color: white;
+	
+	
+	
+}
+
+.footer {
+	position: relative;
+}
+#aa1:hover + .aa {
+	display: block;
+	
+}
