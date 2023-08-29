@@ -1,0 +1,44 @@
+.container {
+	background-color: gray;
+	
+	width: 300px;
+	height: 300px
+}
+.item1{
+	width: 100px;
+	height: 100px;
+	background-color:skyblue;
+	border: 1px solid #000;
+	float: left;
+	box-sizing: border-box;
+	
+}
+.item2 {
+	width: 100px;
+	height: 100px;
+	background-color:skyblue;
+	border: 1px solid #000;
+	float: left;
+	box-sizing: border-box;
+	
+}
+.item3 {
+	width: 100px;
+	height: 100px;
+	background-color:skyblue;
+	border: 1px solid #000;
+	float: left;
+	box-sizing: border-box;
+}
+.itemx {
+	width: 100px;
+	height: 100px;
+	background-color:skyblue;
+	border: 1px solid #000;
+	float: left;
+	border: none;
+	background: transparent;
+	box-sizing: border-box;
+}
+
+

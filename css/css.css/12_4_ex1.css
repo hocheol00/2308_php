@@ -4,10 +4,10 @@
 	width: 60vw;
 	height: 60vw;
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
 	flex-wrap: wrap;
 	/* justify-content: flex-end; */
-	align-items: center;
+	/* align-items: center; */
 }
 /* display : flex 는 자식 영역이 아닌 부모영역에 주어야한다 
 	row-reverse  
@@ -19,9 +19,19 @@
 	row기준 왼쪽으로 정렬
 	flex-direction : 주축의 방향조절
 	*/
+
 .item {
 	width: 15vw;
 	height: 15vw;
 	background-color:skyblue;
 	border: 1px solid #000;
+	
+}
+.item2 {
+	width: 15vw;
+	height: 15vw;
+	background-color:skyblue;
+	border: 1px solid #000;
+	align-self: flex-end;
+	flex-direction: end;
 }

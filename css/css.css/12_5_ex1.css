@@ -1,0 +1,28 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.container {
+	background-color: gray;
+	display: grid;
+	grid-template-columns: repeat(5, 100px);
+	grid-template-rows: repeat(5, 100px);
+	/* grid-template-rows: 50px 50px; */
+	/* grid-template-columns: repeat(4, minmax(200px, 1fr)); */
+	/* grid-column-gap: 10px;
+	grid-row-gap: 10px; */
+	grid-gap: 10px 5px;
+}	
+.item-2 {
+	background-color: cadetblue;
+	grid-column: 2/5;
+}
+.container2 {
+	background-color: gray;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 50px);
+	/* grid-template-rows: 50px 50px; */
+	/* auto-fit 자주 사용 fill과 fit 차이는
+	f12로 사용자 영역차이를 알수있다 */
+}	
+
