@@ -1,0 +1,102 @@
+body {
+		font-family: 'Sedgwick Ave Display';
+		src: url(https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap); 
+		margin: 0px;
+		padding: 0px;
+}
+.header1 {
+	background-image: url(../img/img_1.jpg);
+	width: 100%;
+	display: flex;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	background-size: cover;
+}
+.h1 {
+	color: #ffffff;
+	font-size: 4rem;
+	margin-left: 50px;
+	text-align: left;
+}
+.section { 
+	color: #ffffff;
+	font-size: 1.5rem;
+	width: 50vw;
+	
+}
+.p1{
+	width: 100%;
+}
+.button {
+	background-color: rgb(255, 181, 43);
+	color: #ffffff;
+	width: 200px;
+	border-radius: 5px;
+	font-size: 1.5rem;
+	text-decoration-line: none;
+}
+.main1 {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 1rem;
+	padding: 30px;
+	box-sizing: border-box;
+}
+article {
+	width: 100%;
+	border: 1px dotted #000;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+figure {
+	width: 100%;
+	position: relative;
+	margin: 0;
+}
+.img {
+	width: 100%;
+}
+
+h3 {
+	background-color: #000000a4;
+	width: 100%;
+	color: #ffffff;
+	margin: 0px;
+	padding: 1rem;
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	
+}
+a {
+	background-color: rgb(255, 181, 43);
+	color: #ffffff;
+	font-size: 1.0rem;
+	text-decoration-line: none;
+	display: block;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+}
+footer {
+	color: #ffffff;
+	font-size: 0.75rem;
+	background-color: #333;
+	text-align: center;
+	padding: 20px;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
+a:hover {
+	opacity: 0.6;
+	transition-duration: 0.5s;
+}
