@@ -14,12 +14,14 @@ body {
 	align-items: center;
 	flex-wrap: wrap;
 	background-size: cover;
+	padding: 2rem;
+	box-sizing: border-box;
 }
 .h1 {
 	color: #ffffff;
 	font-size: 4rem;
-	margin-left: 50px;
-	text-align: left;
+	
+	
 }
 .section { 
 	color: #ffffff;
