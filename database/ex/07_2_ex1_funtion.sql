@@ -16,11 +16,19 @@ SELECT IFNULL(null, '수식2');
 SELECT emp_no
 		,title
 		,to_date
-		,IFNULL(null, DATE(NOW())) AS to_date2
+		,IFNULL(to_date, DATE(NOW())) AS to_date2
 FROM titles
 ORDER BY emp_no DESC;
+
+-- 사원의 사번 직책 직책만료일자 를 사번의 내림차순으로 정렬해주세요 
+-- ,단 직책만료일자가 NULL 경우 현재날자로 출력해주세요
+-- 
 
 -- NULLIF (수식1, 수식2) : 수식1과 2가 같으면 NULL을반환하고, 다르면 수식1을 반환
 
 SELECT NULLIF(1,1);
 SELECT NULLIF(1,2);
+
+UPDATE titles
+SET to_date = NULL
+WHERE emp_no = 500000;
