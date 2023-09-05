@@ -73,3 +73,5 @@ VALUES (
 SELECT *
 FROM titles
 WHERE emp_no = 500000;
+
+SHOW VARIABLES LIKE 'autocommit%'
