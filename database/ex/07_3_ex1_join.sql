@@ -159,7 +159,7 @@ FROM titles AS t
 GROUP BY t.title
 	HAVING avg_sal >= 60000
 ORDER BY avg_sal DESC;
-		
+
 -- 10 성별이 여자인 사원들의 직급별 사원수를 출력해 주세요
 SELECT title, COUNT(*)	
 	FROM titles AS t
@@ -168,6 +168,8 @@ SELECT title, COUNT(*)
 		AND t.to_date >= NOW()
 where emp.gender = 'f'
 		GROUP BY t.title;
+
+
 
 -- 11.퇴사한 여직원의 수
 SELECT emp.gender, COUNT(*)
@@ -186,5 +188,3 @@ HAVING emp.gender = 'f';
 
 
 
-
-		
