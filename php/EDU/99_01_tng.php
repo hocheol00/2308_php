@@ -1,0 +1,22 @@
+<?php
+
+
+//if 문제 : 90이면 수, 80이면 우 , 그외는 노력
+
+// $i = 79;
+// if( $i === 90) {
+// 	echo "수";
+// } else if( $i === 80 ) {
+// 	echo "우";
+// } else {
+// 	echo "노력";
+// }
+
+// while문 이용해서 : 구구단 7단
+$num = 1;
+while($num <= 9) {
+	$total = 7 * $num;
+	echo "7 x {$num} = {$total}\n";
+	$num++;
+	
+}
