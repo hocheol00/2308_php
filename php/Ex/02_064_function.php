@@ -52,9 +52,25 @@
 // echo my_sum3(1,2,1);
 
 // 가변 파라미터 php5.6 이상
-function my_args_param(...$items) {
-	echo $items[0];
-	print_r ($items);
+// function my_args_param(...$items) {
+// 	echo $items[0];
+// 	print_r ($items);
+// }
+
+// my_args_param("a");
+
+//레퍼런스 파라미터
+
+// function test1( $str ) {
+// 	$str = "함수 test1";
+// 	return $str;
+// }
+function test2( &$str ) {
+	$str = "함수 test2";
+	return $str;
 }
 
-my_args_param("a");
+$str = "???";
+$result = test2( $str );
+echo $result, "\n";
+echo $str;
