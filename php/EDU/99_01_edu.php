@@ -55,18 +55,36 @@
 
 
 //배열(array)
-$arr = [1, 2, 3]; // 인덱스 배열 자동으로 0부터 번호가 주어진다
-$arr2 = [
-	"key1" => "val1" // 연상배열 : 키를 직접 이름을 주어주고 값을 내는것
-	,"key2" => [
-			"key3" => "key3"
-			,"key4" => "key4"
-		]
-];
+// $arr = [1, 2, 3]; // 인덱스 배열 자동으로 0부터 번호가 주어진다
+// $arr2 = [
+// 	"key1" => "val1" // 연상배열 : 키를 직접 이름을 주어주고 값을 내는것
+// 	,"key2" => [
+// 			"key3" => "key3"
+// 			,"key4" => "key4"
+// 		]
+// ];
 
-// echo $arr[2], "\n";
-// echo $arr2["key2"]["key4"];
+// // echo $arr[2], "\n";
+// // echo $arr2["key2"]["key4"];
 
-foreach( $arr2["key2"] as $key => $val) {
-	echo "$key : $val,\n";
+// foreach( $arr2["key2"] as $key => $val) {
+// 	echo "$key : $val,\n";
+// }
+
+$arr =  [
+	[
+		"emp_no" => 10001
+		,"gender" => "F"
+	]
+	,[
+		"emp_no" => 10002
+		,"gender" => "M"
+	]
+	];
+	
+foreach ($arr as $key => $item) {
+	if($item["gender"] == "M") {
+		echo $item["emp_no"];
+	}
+
 }
