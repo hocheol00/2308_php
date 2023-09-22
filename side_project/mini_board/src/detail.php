@@ -63,22 +63,24 @@ $input_id = $_GET["id"];
 		require_once(FILE_HEADER);
     ?>
     <table>
-        <tr>
-            <th>글 번호</th>
-            <td><? echo $item["id"]; ?></td>
-        </tr>
-        <tr>
-            <th>제목</th>
-            <td><?php echo $item["title"]; ?></td>
-        </tr>
-        <tr>
-            <th>내용</th>
-            <td><?php echo $item["content"]; ?></td>
-        </tr>
-        <tr>
-            <th>작성일자</th>
-            <td><?php echo $item["creat_at"]; ?></td>
-        </tr>
+        <div class = "detail-page">
+            <tr>
+                <th>글 번호</th>
+                <td><? echo $item["id"]; ?></td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td><?php echo $item["title"]; ?></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><?php echo $item["content"]; ?></td>
+            </tr>
+            <tr>
+                <th>작성일자</th>
+                <td><?php echo $item["creat_at"]; ?></td>
+            </tr>
+        </div>
     </table>
     <a href="/mini_board/src/list.php/?page=<?php echo $page_num; ?>">이동</a>
     <a href="#">수정</a>
