@@ -153,4 +153,44 @@
 			return false;
 		}
 	}
+
+
+	// ----------------------------
+	//특정 아이디의 게시글 정보를 가져오기
+	// 함수명 	: db_select_boards_id
+	// 기능 	: 
+	// 파라미터 : PDO 	&$conn
+	//			Array	&$arr_param 쿼리 작성용 배열
+	// 리턴 	: boolean
+	// ----------------------------
+
+
+
+	function db_select_boards_id(&$conn, &$arr_param) {
+		$sql =
+			" SELECT "
+			." id "
+			." ,title "
+			." ,content "
+			." ,creat_at "
+			." FROM "
+			." boards "
+			." WHERE "
+			." id = :id "
+			;
+			$arr_ps = [
+				":id" => $arr_param["id"]
+			];
+
+			try {
+			$stmt = $conn->prepare($sql);
+			$stmt->execute($arr_ps);
+			$result = $stmt->fetchAll();
+			return $result;
+		} catch(Exception $e) {
+			echo $e->getMessage();
+			return false;
+		}
+	}
+	
 ?>

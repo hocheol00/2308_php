@@ -7,62 +7,67 @@
 	require_once(ROOT."lib/lib_db.php"); // db관련 라이브러리
 
 	$conn = null;
-
-	// DB 접속
-	if(!my_db_conn($conn))
-	{
-		echo "DB Error : PDO Instance";
-		my_db_destroy_conn($conn);
-		exit;
-	}
-
 	//페이징 처리
 	$list_cnt = 5; //한 페이지 최대 표시 수
 	$page_num = 1; //페이지 번호 초기화
+	
+	try {
+		// DB 접속
+		if(!my_db_conn($conn))
+		{
+			throw new Exception("DB Error : PDO Instance");	
+		}
 
-	//총 게시글 수 검색
-	$boards_cnt = db_select_boards_cnt($conn); 
-	if($boards_cnt === false) {
-		echo "DB Error : SELECT Count";
+		//총 게시글 수 검색
+		$boards_cnt = db_select_boards_cnt($conn); 
+		if($boards_cnt === false) {
+			throw new Exception("DB Error : SELECT Count");
+		}
+
+		$max_page_num = ceil($boards_cnt / $list_cnt); // 최대 페이지 수
+		
+		//isset으로 변수가 설정되었는지 확인할 수 있습니다.
+		if(isset($_GET["page"])) { 
+			$page_num = $_GET["page"]; //유저가 보내온 페이지 셋팅
+		}
+		$offset = ($page_num - 1) * $list_cnt; //오프셋 계산
+
+		// 이전버튼
+		$prev_page_num = $page_num - 1;
+		if($prev_page_num === 0) {
+			$prev_page_num = 1;
+		}
+		//다음버튼
+		$next_page_num = $page_num + 1;
+		if($next_page_num > $max_page_num) {
+			$next_page_num = $max_page_num;
+		}
+
+
+		//DB 조회시 사용할 데이터 배열
+		$arr_param = [
+			"list_cnt" => $list_cnt
+			,"offset" => $offset
+		];
+		
+
+		// 게시글 리스트 조회
+		$result = my_db_select_boards_paging($conn, $arr_param);
+		if(!$result)
+		{
+			throw new Exception("DB Error : SELECT boards");
+			exit;
+		}
+
+	}
+	catch(Exception $e) {
+		echo $e->getMessage();
+		exit;
+	}
+	finally {
 		my_db_destroy_conn($conn);
-		exit;
 	}
 
-	$max_page_num = ceil($boards_cnt / $list_cnt); // 최대 페이지 수
-	
-	if(isset($_GET["page"])) {
-		$page_num = $_GET["page"]; //유저가 보내온 페이지 셋팅
-	}
-	$offset = ($page_num - 1) * $list_cnt; //오프셋 계산
-
-	// 이전버튼
-	$prev_page_num = $page_num - 1;
-	if($prev_page_num === 0) {
-		$prev_page_num = 1;
-	}
-	//다음버튼
-	$next_page_num = $page_num + 1;
-	if($next_page_num > $max_page_num) {
-		$next_page_num = $max_page_num;
-	}
-
-
-	//DB 조회시 사용할 데이터 배열
-	$arr_param = [
-		"list_cnt" => $list_cnt
-		,"offset" => $offset
-	];
-	
-
-	// 게시글 리스트 조회
-	$result = my_db_select_boards_paging($conn, $arr_param);
-	if(!$result)
-	{
-		echo "DB Error : SELECT boards";
-		exit;
-	}
-
-	my_db_destroy_conn($conn);
 
 ?>
 
@@ -100,8 +105,12 @@
 			?>
 				<tr>
 					<td><?php echo $item["id"]?></td>
-					<td><?php echo $item["title"]?></td>
-					<td><?php echo $item["creat_at"]?></td>
+					<td>
+						<a href="/mini_board/src/detail.php/?id=<?php echo $item["id"];?>&page=<?php echo $page_num; ?>">
+							<?php echo $item["title"];?>
+						</a>
+					</td>
+					<td><?php echo $item["creat_at"];?></td>
 				</tr>
 			
 			<?php
