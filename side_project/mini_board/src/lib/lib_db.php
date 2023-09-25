@@ -201,8 +201,8 @@
 	//			Array	&$arr_param 쿼리 작성용 배열
 	// 리턴 	: boolean
 	// ----------------------------
-	function db_update_boards_id(&$conn, &$arr_param) {
-		$sql = 
-	}
+	// function db_update_boards_id(&$conn, &$arr_param) {
+	// 	$sql = 
+	// }
 
 ?>
