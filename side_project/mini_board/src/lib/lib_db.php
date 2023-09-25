@@ -193,4 +193,16 @@
 		}
 	}
 	
+
+	// ----------------------------
+	// 함수명 	: db_update_boards_id
+	// 기능 	:  boards 레코드 수정
+	// 파라미터 : PDO 	&$conn
+	//			Array	&$arr_param 쿼리 작성용 배열
+	// 리턴 	: boolean
+	// ----------------------------
+	function db_update_boards_id(&$conn, &$arr_param) {
+		$sql = 
+	}
+
 ?>

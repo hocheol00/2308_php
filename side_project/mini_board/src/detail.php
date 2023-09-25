@@ -6,6 +6,8 @@ require_once(ROOT."lib/lib_db.php"); // db관련 라이브러리
 $page_num=$_GET["page"];
 
 $id = ""; // 게시글 아아디
+
+
 try {
     
     if(!my_db_conn($conn))
@@ -82,8 +84,10 @@ $input_id = $_GET["id"];
             </tr>
         </div>
     </table>
-    <a href="/mini_board/src/list.php/?page=<?php echo $page_num; ?>">이동</a>
-    <a href="#">수정</a>
-    <a href="#">삭제</a>
+    <div class="d-num">
+        <div class="abcd"><a class="d-num-but" href="/mini_board/src/list.php/?page=<?php echo $page_num; ?>">이동</a></div>
+        <a class="d-num-but" href="/mini_board/src/update.php/?id=<?php echo $id; ?> &page=<?php echo $page_num; ?>">수정</a>
+        <a class="d-num-but" href="#">삭제</a>
+    </div>
 </body>
 </html>
