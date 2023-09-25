@@ -86,7 +86,7 @@ $input_id = $_GET["id"];
     </table>
     <div class="d-num">
         <div class="abcd"><a class="d-num-but" href="/mini_board/src/list.php/?page=<?php echo $page_num; ?>">이동</a></div>
-        <a class="d-num-but" href="/mini_board/src/update.php/?id=<?php echo $id; ?> &page=<?php echo $page_num; ?>">수정</a>
+        <a class="d-num-but" href="/mini_board/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page_num; ?>">수정</a>
         <a class="d-num-but" href="#">삭제</a>
     </div>
 </body>

@@ -201,8 +201,28 @@
 	//			Array	&$arr_param 쿼리 작성용 배열
 	// 리턴 	: boolean
 	// ----------------------------
-	// function db_update_boards_id(&$conn, &$arr_param) {
-	// 	$sql = 
-	// }
+	function db_update_boards_id(&$conn, &$arr_param) {
+	$sql =
+		" UPDATE boards "
+		." SET "
+		." title = :title "
+		." ,content = :content "
+		." WHERE "
+		." id = :id ";
+		
+		$arr_ps = [
+			":title" => $arr_param["title"]
+			,":content" => $arr_param["content"]
+			,":id" => $arr_param["id"]
+		];
 
+		try {
+			$stmt = $conn->prepare($sql);
+			$result = $stmt->execute($arr_ps);
+			return $result;
+		} catch (Exception $e) {
+			echo $e ->getMessage();
+			return false;
+		}
+	}
 ?>

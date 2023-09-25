@@ -5,7 +5,7 @@
 
 	$conn = null; //DB 연결용 변수
 	$id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; //id셋팅
-	$page_num = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; //page셋팅
+	$page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; //page셋팅
 	$http_method = $_SERVER["REQUEST_METHOD"]; //method 확인
 	
 	try {
@@ -40,10 +40,18 @@
 			];
 
 			//게시글 수정 처리
-			
+			$conn->beginTransaction(); // 트랜잭션 시작
+			if(!db_update_boards_id($conn, $arr_param)) {
+				throw new Exception("DB Error : Update_Boards_id");
+			}
+			$conn->commit();
+			header("Location: detail.php/?id={$id}&page={$page}"); //디테일 페이지로 이동
+			exit;
 		}
-
 	} catch(Exception $e) {
+		if($http_method === "POST") {
+			$conn->rollBack();
+		}
 		echo $e->getMessage();
 		exit;
 	} finally {
@@ -52,8 +60,8 @@
 	
 
 	$id = $_GET["id"];
-	// var_dump($id); //확인해보기
-	$page_num=$_GET["page"];
+	// // var_dump($id); //확인해보기
+	// $page_num=$_GET["page"];
 
 ?>
 
@@ -68,12 +76,12 @@
 
 	<body>
 		<?php
-			require_once(FILE_HEADER);
+			require_once(FILE_HEADER);                              
 		?>
-		<form action="/mini_borad/src/update.php" method="post">
+		<form action="/mini_board/src/update.php" method="post">
 			<table>
 				<input type="hidden" name="id" value="<?php echo $id ?>">
-				<input type="hidden" name="page" value="<?php echo $page_num ?>">
+				<input type="hidden" name="page" value="<?php echo $page ?>">
 				<div class = "detail-page">
 					<tr>
 						<th>글 번호</th>
@@ -95,8 +103,10 @@
 			</table>
 			
 			<div class="d-num">
-				<div class="abcd"><button  class="d-num-but" type="submit">수정취소</button></div>
-				<a class="d-num-but" href="/mini_board/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page_num; ?>">수정확인</a>
+				<div class="abcd">
+					<button class="d-num-but" type="submit">수정확인</button>
+				</div>
+				<a class="d-num-but" href="/mini_board/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정취소</a>
 			</div>
 		</form>
 		
