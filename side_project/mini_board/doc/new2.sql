@@ -41,3 +41,6 @@ LIMIT 5 OFFSET 5;
 
 SELECT COUNT(id)
 FROM boards;
+
+ALTER TABLE boards
+RENAME COLUMN delete_fig TO delete_flg;
