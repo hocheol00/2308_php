@@ -75,6 +75,8 @@
 				."		,creat_at "
 				." FROM "
 				."		boards "
+				." WHERE "
+				." delete_flg = '0' "
 				." ORDER BY "
 				." 		id DESC "
 				." LIMIT :list_cnt OFFSET :offset "
@@ -112,6 +114,8 @@
 				." count(id) as cnt "
 				." FROM "
 				." boards "
+				." WHERE "
+				." delete_flg = '0' "
 				;
 		try{
 			$stmt = $conn->query($sql);
@@ -177,6 +181,8 @@
 			." boards "
 			." WHERE "
 			." id = :id "
+			." AND "
+			." delete_flg = '0' "
 			;
 			$arr_ps = [
 				":id" => $arr_param["id"]
@@ -225,4 +231,41 @@
 			return false;
 		}
 	}
+
+	// ----------------------------
+	// 함수명 	: db_delete_boards_id
+	// 기능 	:  특정 id의 레코드 삭제
+	// 파라미터 : PDO 	&$conn
+	//			Array	&$arr_param
+	// 리턴 	: boolean
+	// ----------------------------
+
+	function db_delete_boards_id(&$conn, &$arr_param) {
+		$sql =
+			" UPDATE boards "
+			." SET "
+			." delete_at = now() "
+			." ,delete_flg = '1' "
+			." WHERE "
+			." id = :id "
+			;
+		$arr_ps = [
+			":id" => $arr_param["id"]
+		];
+		
+		try {
+			//2. query 실행
+			$stmt = $conn->prepare($sql);
+			$result = $stmt->execute($arr_ps);
+			
+			return $result; //정상종료 : true 리턴
+		} catch(Exception $e) {
+			echo $e->getMessage(); //exception 메세지 출력
+			return false; //예외발생 : false 리턴
+		}
+
+	}
+
+
+
 ?>
