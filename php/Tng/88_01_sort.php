@@ -38,5 +38,5 @@ for ($i = 0; $i <= $count-1; $i++) {
 print_r($arr);
 
 foreach($arr as $key => $val) {
-	$arr[$key]
+	$arr[$key];
 }

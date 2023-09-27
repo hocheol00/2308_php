@@ -28,7 +28,7 @@ for($i = 1; $i <= $num; $i++) {
 		echo "*";
 		}
 	
-	echo "\n";	
+	echo "\n";
 }
 
 // $sum = 5;
