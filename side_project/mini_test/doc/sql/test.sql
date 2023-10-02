@@ -2,22 +2,23 @@ SET autocommit = 0;
 
 SELECT @@AUTOCOMMIT;
 
-CREATE DATABASE mini_board;
+CREATE DATABASE mini_test;
 
-USE mini_board;
+USE mini_test;
 
-CREATE TABLE boards(
+CREATE TABLE test(
 	id INT PRIMARY KEY AUTO_INCREMENT
 	,title varchar(100) NOT null
-	,content VARCHAR(1000) NOT null
+	,name_t VARCHAR(1000) NOT null
 	,creat_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+	,views int NOT NULL DEFAULT '0'
 	,delete_fig CHAR(1) NOT NULL DEFAULT '0'
-	,delete_at DATETIME DEFAULT NULL
 );
 
-INSERT INTO boards(
+INSERT INTO test(
 	title
-	,content
+	,name_t
+
 )
 VALUES
 ('제목1','내용1')

@@ -9,11 +9,14 @@
     border-bottom: 1px solid gray;
     text-align: center;
 }
-.header h1 {
+.h1_h1 {
     font-size: 50px;
     margin: 10px;
     font-family: 'Noto Sans KR', sans-serif;
+    text-decoration: none;
+    color: #000;
 }
+
 .subhead {
     margin:  10px auto;
     width: 500px;
@@ -43,3 +46,18 @@ td {
     text-align: center;
 }
 
+section {
+    text-align: center;
+}
+
+.num {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    width: 40px;
+    font-size: 18px;
+ }
+
+.page_btn {
+    color: blue;
+}
