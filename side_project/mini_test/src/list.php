@@ -102,9 +102,9 @@ try {
 				{
 			?>
 				<tr>
-					<td><?php echo $item["id"]?></td>
-					<td><?php echo $item["title"];?></td>
-					<td><?php echo $item["name_t"];?></td>
+                <td><a class="a-link" href="/mini_test/src/detail.php/?id=<?php echo $item["id"];?>&page=<?php echo $page_num ?>"><?php echo $item["id"];?></a></td>
+					<td><a class="a-link" href="/mini_test/src/detail.php/?id=<?php echo $item["id"];?>&page=<?php echo $page_num ?>"><?php echo $item["title"];?></a></td>
+					<td><a class="a-link" href="/mini_test/src/detail.php/?id=<?php echo $item["id"];?>&page=<?php echo $page_num ?>"><?php echo $item["name_t"];?></a></td>
                     <td><?php echo $item["creat_at"];?></td>
                     <td><?php echo $item["views"];?></td>
 				</tr>

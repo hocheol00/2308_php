@@ -2,19 +2,25 @@
 
 /* *{font-family: 'Noto Sans KR', sans-serif;} */
 
-.header {
+header {
     width: 100%;
     /* background-color: #000; */
-    padding: 1rem auto;
+     padding: 1rem auto;
     border-bottom: 1px solid gray;
     text-align: center;
 }
+
 .h1_h1 {
     font-size: 50px;
     margin: 10px;
     font-family: 'Noto Sans KR', sans-serif;
     text-decoration: none;
     color: #000;
+}
+header>h1:hover {
+    /* background-color: #00000080; */
+    transform: scale(1.2);
+	transition-duration: 0.4s;
 }
 
 .subhead {
@@ -60,4 +66,31 @@ section {
 
 .page_btn {
     color: blue;
+}
+/* detailpage */
+.a-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.d-num {
+	/* display: inline-block; */
+	text-decoration: none;
+	text-align: center;
+	margin: auto;
+    padding: 10px;
+    width: 800px;
+    color: #000;
+    /* background-color: #000; */
+    
+    position: relative;
+
+}
+
+.d-num-but {
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+    /* background-color: #00000080; */
+    /* border-radius: 50px; */
 }

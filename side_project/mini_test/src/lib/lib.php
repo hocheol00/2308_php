@@ -177,7 +177,7 @@
 			" SELECT "
 			." id "
 			." ,title "
-			." ,content "
+			." ,name_t "
 			." ,creat_at "
 			." FROM "
 			." test "
