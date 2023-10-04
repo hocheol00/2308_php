@@ -8,11 +8,12 @@ header {
      padding: 1rem auto;
     border-bottom: 1px solid gray;
     text-align: center;
+    margin: 10px auto;
 }
 
 .h1_h1 {
     font-size: 50px;
-    margin: 10px;
+    margin: 10px auto;
     font-family: 'Noto Sans KR', sans-serif;
     text-decoration: none;
     color: #000;
@@ -30,28 +31,42 @@ header>h1:hover {
     grid-template-columns: 1fr 1fr 1fr;
     /* grid-template-rows: 1fr 1fr 1fr; */
     grid-gap: 20px 10px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     place-items: center;
+}
+
+.list-table {
+    border-collapse: collapse;
+    /* width: 1500px; */
+    /* height: 100px; */
+    margin: 10px auto;
+    font-size: 1.2rem;
+    padding: 10px;
 }
 table {
     border-collapse: collapse;
-    width: 70%;
-    /* height: 100px; */
-    margin: 20px auto;
+    width: 60%;
+    height: 100px;
+    margin: 10px auto;
     font-size: 1.2rem;
     padding: 20px;
+
 }
 
 table tr th {
     width: 20%;
+    text-decoration: none;
     
-}
+} 
 
-td {
+.list-table td {
     border-bottom: 1px solid #000;
     height: 100px;
     text-align: center;
     text-decoration: none;
+    color: #000;
+    width: 20%;
+
 }
 
 section {
@@ -79,11 +94,11 @@ section {
 
 
 /* detailpage */
-/* .a-link {
+.a-link {
     text-decoration: none;
     color: #000;
 
-} */
+}
 
 .d-num {
 	/* display: inline-block; */
@@ -107,7 +122,25 @@ section {
     /* border-radius: 50px; */
 }
 
+.detail-page {
+    text-align: left;
+    border-collapse: collapse;
+    width: 70%;
+    font-size: 1.2rem;
+    /* height: 100px; */
+    margin: 10px auto;
+    padding: 10px;
+}
 
+.detail-page td {
+    border-bottom: 1px solid #000;
+    height: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    width: 20%;
+
+}
 /* insert page */
 
 textarea {
@@ -115,57 +148,129 @@ textarea {
     resize: none;
     width: 500px;
     height: 300px;
-
+    vertical-align: middle;
+    position: relative;
+    /* text-align: center; */
+}
+label {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+   
+    
 }
 input {
     border: 1px solid #000;
     width: 500px;
-    height: 100px;
+    height: 50px;
+    /* margin: 20px; */
 }
 .box {
     margin: 10px auto;
-    width: 500px;
-}
-
-  /* ******delete page*********** */
-  .d-num {
-	/* display: inline-block; */
-	text-decoration: none;
-	text-align: right;
-	margin: auto;
-    padding: 10px;
-    width: 800px;
-    /* background-color: #000; */
-    
-    position: relative;
+    width: 700px;
+    padding: 50px;
 
 }
+.num1 {
+    text-align: center;
+}
+form {
+    /* text-align: center; */
+    /* width: 800px; */
+}
+.insert-b {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+ } 
 
-.abcd {
+ .insert-b:hover {
+    transform: scale(1.1);
+	transition-duration: 0.4s;
+ }
+
+.insert-bot-but {
+    text-align: right;
     position: absolute;
-    border-radius: 30px;
-    /* padding: 10px; */
-    /* margin: auto; */
+    right: 690px;
+    top: 580px;
+}
+/* update */
+  .d-num { 
+	 text-decoration: none;
+    padding: 10px;
+    width: 30%;
+    text-align: right;
     
 }
 
 .d-num-but {
-    padding: 10px;
-    /* background-color: #00000080; */
-    border-radius: 50px;
-}
-
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+ } 
 
 
 .d-num-but:hover {
-	border-radius: 50px;
-	transform: scale(1.2);
+	
+	transform: scale(1.1);
 	transition-duration: 0.4s;
-	font-size: 1 rem;
-	background-color: #0000002c;
+	
 }
-  .delete-b {
+.delete-b {
     width: 700px;
     margin: 50px auto;
     text-align: center;
+}
+
+
+
+/* ******delete page*********** */
+
+.delete-page {
+    text-align: left;
+    border-collapse: collapse;
+    font-size: 1.2rem;
+    margin: 10px auto;
+    width: 40%;
+}
+
+.delete-page td {
+    border-bottom: 1px solid #000;
+    height: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    width: 30%;
+}
+.delete-page tr {
+    border-bottom: 1px solid #000;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    
+}
+
+.delete-b {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+ } 
+
+
+.delete-b:hover {
+	
+	transform: scale(1.1);
+	transition-duration: 0.4s;
+}
+.delete-b {
+    width: 50px;
+    margin: 10px auto;
+    text-align: center;
+}
+.del-form {
+    width: 500px;
+    text-align: right;
+    margin-left: 820px;
 }

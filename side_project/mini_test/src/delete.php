@@ -93,6 +93,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/mini_test/src/css/img/test.css">
     <title>삭제 페이지</title>
 </head>
 <body>
@@ -100,7 +101,7 @@
 		require_once(FILE_HEADER);
 	?>
     <main>
-        <table>
+        <table class="delete-page">
             <caption>
                 삭제하면 영구적을 복구 할 수 없습니다.
                 <br>
@@ -125,12 +126,12 @@
             </tr>
         </table>
     </main>
-    <div class="delete-b">
-        <form action="/mini_test/src/delete.php" method="post">
+    
+        <form class="del-form" action="/mini_test/src/delete.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <button type="submit">동의</button>
-            <a href="/mini_test/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
+            <button class="delete-b" type="submit">동의</button>
+            <a class="a-link" href="/mini_test/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
         </form>
-    </div>
+   
 </body>
 </html>

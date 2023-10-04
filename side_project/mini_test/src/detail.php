@@ -64,8 +64,9 @@ $input_id = $_GET["id"];
     <?php
 		require_once(FILE_HEADER);
 	?>
+    <div class="detail-page">
     <table>
-        <div class="detail-page">
+        
             <tr>
                 <td>아이디</td>
                 <td><? echo $item["id"]; ?></td>
@@ -82,8 +83,8 @@ $input_id = $_GET["id"];
                 <td>작성일자</td>
                 <td><?php echo $item["creat_at"]; ?></td>
             </tr>
-        </div>
     </table>
+    </div>
     <div class="d-num">
         <a class="d-num-but" href="/mini_test/src/list.php/?page=<?php echo $page_num; ?>">이동</a>
         <a class="d-num-but" href="/mini_test/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page_num; ?>">수정</a>

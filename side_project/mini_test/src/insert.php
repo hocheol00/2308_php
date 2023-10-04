@@ -55,16 +55,16 @@ if($http_method === "POST") {
     <div class="box">
      <form action="/mini_test/src/insert.php" method="post">
         <!-- <fieldset> -->
-            
             <label for="title">제목</label>
             <input type="text" id = "title" name = "title">
-            <br>
+            <br><br>
             <label for="name_t">내용</label>
             <textarea name="name_t" id="name_t" cols="30" rows="10"></textarea>
-            <br>
-            <button type="submit">작성</button>
+            <br><br>
+            <div class="insert-bot-but">
+            <button class="insert-b" type="submit">작성</button>
             <a class="d-num-but" href="/mini_test/src/list.php">취소</a>
-            
+            </div>
             <!-- </fieldset> -->
     </form>
     </div>

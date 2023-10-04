@@ -70,6 +70,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/mini_test/src/css/img/test.css">
     <title>수정페이지</title>
 </head>
 <body>
@@ -77,35 +78,35 @@
 		require_once(FILE_HEADER);
 	?>
     <form action="/mini_test/src/update.php" method="post">
-			<table>
+			<table class="box">
 				<input type="hidden" name="id" value="<?php echo $id ?>">
 				<input type="hidden" name="page" value="<?php echo $page ?>">
-				<div class = "detail-page">
+				
 					<tr>
 						<th>글 번호</th>
-						<td><? echo $item["id"]; ?></td>
+						<td class="num1"><? echo $item["id"]; ?></td>
 					</tr>
 					<tr>
 						<th>제목</th>
 						<td>
-							<input type="text" name="title" value="<?php echo $item["title"] ?>">
+						<br><input type="text" name="title" value="<?php echo $item["title"] ?>">
 						</td>
 					</tr>
+					<br>
 					<tr>
 						<th>내용</th>
 						<td>
-							<textarea name="name_t" id="name_t" cols="40" rows="10"><?php echo $item["name_t"] ?></textarea>
+							<br><textarea name="name_t" id="name_t" cols="40" rows="10"><?php echo $item["name_t"] ?></textarea>
 						</td>
 					</tr>
-				</div>
+				
 			</table>
 			
 			<div class="d-num">
-				<div class="abcd">
-					<button class="d-num-but" type="submit">수정확인</button>
-				</div>
+				<button class="d-num-but" type="submit">수정확인</button>
 				<a class="d-num-but" href="/mini_test/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정취소</a>
 			</div>
 		</form>
+		
 </body>
 </html>

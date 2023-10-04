@@ -76,12 +76,12 @@ try {
 		require_once(FILE_HEADER);
 	?>
         <div class="subhead">   
-            <h3>회원게시판</h3>
-            <a class="insert-a" href="/mini_test/src/insert.php"><h3>문의게시판</h3></a>
-            <h3>마이페이지</h3>
+            <h3>F&Q</h3>
+            <a class="insert-a" href="/mini_test/src/insert.php"><h3>Q&A</h3></a>
+            <h3>my page</h3>
         </div>
     </div>
-    
+    <div class="list-table">
     <table>
         <colgroup>
             <col width="20%" />
@@ -114,6 +114,7 @@ try {
 				}
 			?>
     </table>
+    </div>
     <section>
     <a class="num" href="/mini_test/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
         <?php
