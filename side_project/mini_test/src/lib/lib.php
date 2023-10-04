@@ -136,20 +136,20 @@
 	//			Array	&$arr_param 쿼리 작성용 배열
 	// 리턴 	: Boolean
 	// ----------------------------
-	function db_insert_test(&$conn, $arr_param) {
+	function db_insert_test(&$conn, &$arr_param) {
 		$sql =
 			" INSERT INTO test ( "
 			." title "
-			." ,content "
+			." ,name_t "
 			." ) "
 			." VALUES ( "
 			." :title "
-			." ,:content "
+			." ,:name_t "
 			." ) "
 			;
 		$arr_ps = [
 			":title" => $arr_param["title"]
-			,":content" => $arr_param["content"]
+			,":name_t" => $arr_param["name_t"]
 		];
 		try {
 			$stmt = $conn->prepare($sql);
@@ -211,16 +211,16 @@
 	// ----------------------------
 	function db_update_test_id(&$conn, &$arr_param) {
 	$sql =
-		" UPDATE boards "
+		" UPDATE test "
 		." SET "
 		." title = :title "
-		." ,content = :content "
+		." ,name_t = :name_t "
 		." WHERE "
 		." id = :id ";
 		
 		$arr_ps = [
 			":title" => $arr_param["title"]
-			,":content" => $arr_param["content"]
+			,":name_t" => $arr_param["name_t"]
 			,":id" => $arr_param["id"]
 		];
 

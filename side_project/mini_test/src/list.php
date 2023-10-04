@@ -77,10 +77,11 @@ try {
 	?>
         <div class="subhead">   
             <h3>회원게시판</h3>
-            <h3>문의게시판</h3>
+            <a class="insert-a" href="/mini_test/src/insert.php"><h3>문의게시판</h3></a>
             <h3>마이페이지</h3>
         </div>
     </div>
+    
     <table>
         <colgroup>
             <col width="20%" />
