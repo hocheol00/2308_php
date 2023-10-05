@@ -80,7 +80,8 @@
         if($http_method === "POST") {
             $conn->rollback();
         }
-        echo $e->getMessage(); //에러 메세지 출력
+        // echo $e->getMessage(); //에러 메세지 출력
+        header("Location: error.php/?err_msg={$e->getMessage()}");
         exit; //처리정료
     } finally {
 
@@ -130,7 +131,7 @@
         <form class="del-form" action="/mini_test/src/delete.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <button class="delete-b" type="submit">동의</button>
-            <a class="a-link" href="/mini_test/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
+            <a class="insert-a" href="/mini_test/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
         </form>
    
 </body>

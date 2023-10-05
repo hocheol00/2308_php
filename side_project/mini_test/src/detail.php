@@ -42,7 +42,8 @@ try {
     } 
     $item = $result[0]; // 
 } catch(Exception $e) {
-    echo $e->getMessage();
+    // echo $e->getMessage();
+    header("Location: error.php/?err_msg={$e->getMessage()}");
     var_dump($_GET);
     exit;
 } finally {
@@ -86,9 +87,9 @@ $input_id = $_GET["id"];
     </table>
     </div>
     <div class="d-num">
-        <a class="d-num-but" href="/mini_test/src/list.php/?page=<?php echo $page_num; ?>">이동</a>
-        <a class="d-num-but" href="/mini_test/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page_num; ?>">수정</a>
-        <a class="d-num-but" href="/mini_test/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page_num; ?>">삭제</a>
+        <a class="insert-c" href="/mini_test/src/list.php/?page=<?php echo $page_num; ?>">이동</a>
+        <a class="insert-c" href="/mini_test/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page_num; ?>">수정</a>
+        <a class="insert-c" href="/mini_test/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page_num; ?>">삭제</a>
     </div>
 
 </body>

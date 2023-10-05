@@ -92,6 +92,10 @@ section {
     color: #000;
 }
 
+.insert-a:hover {
+    transform: scale(1.2);
+	transition-duration: 0.4s;
+}
 
 /* detailpage */
 .a-link {
@@ -99,6 +103,7 @@ section {
     color: #000;
 
 }
+
 
 .d-num {
 	/* display: inline-block; */
@@ -109,17 +114,21 @@ section {
     width: 800px;
     color: #000;
     /* background-color: #000; */
-    
-    position: relative;
 
+    position: relative;
 }
 
-.d-num-but {
+.insert-c {
+    display: inline-block;
+    width: 50px;
     text-decoration: none;
-    padding: 10px;
+    text-align: right;
     color: #000;
-    /* background-color: #00000080; */
-    /* border-radius: 50px; */
+}
+
+.insert-c:hover {
+    transform: scale(1.2);
+	transition-duration: 0.4s;
 }
 
 .detail-page {
@@ -179,23 +188,24 @@ form {
     /* text-align: center; */
     /* width: 800px; */
 }
-.insert-b {
+.insert-d {
     background-color: transparent;
     border: none;
     font-size: 1rem;
+    color: #000;
+    text-decoration: none;
  } 
 
- .insert-b:hover {
+ .insert-d:hover {
     transform: scale(1.1);
 	transition-duration: 0.4s;
  }
 
 .insert-bot-but {
     text-align: right;
-    position: absolute;
-    right: 690px;
-    top: 580px;
+    width: 600px;
 }
+
 /* update */
   .d-num { 
 	 text-decoration: none;
@@ -273,4 +283,31 @@ form {
     width: 500px;
     text-align: right;
     margin-left: 820px;
+}
+
+
+
+/* erorr page */
+
+.container {
+    width: 800px;
+    font-size: 30px;
+    display: inline block;
+    text-align: center;
+    margin: 50px auto;
+    border: 1px solid #000;
+}
+
+.error-b {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+ } 
+
+
+.error-b:hover {
+	transform: scale(1.1);
+	transition-duration: 0.4s;
 }

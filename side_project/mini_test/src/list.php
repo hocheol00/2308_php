@@ -52,7 +52,8 @@ try {
     }
 
     catch(Exception $e) {
-		echo $e->getMessage();
+		// echo $e->getMessage(); 
+        header("Location: error.php/?err_msg={$e->getMessage()}");
 		exit;
 	}
 	finally {
