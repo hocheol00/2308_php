@@ -30,18 +30,18 @@
 // }
 
 
-// for($i = 1; $i <= 9; $i++) {
-// 	// if ($i >=2 && $i <=8){
-// 	// continue;
-// 	// // }
-// 	//  if ( $i % 2 == 1 ){
-// 	//  continue;
-// 	//  }
-// 	echo "{$i}단\n";
-// 	for($num = 1; $num <= 9; $num++) {
-// 		$mul = $i * $num;
-// 		echo "{$i} x {$num} = {$mul}\n";
-// 	}
-// }
+for($i = 1; $i <= 9; $i++) {
+	// if ($i >=2 && $i <=8){
+	// continue;
+	// // }
+	//  if ( $i % 2 == 1 ){
+	//  continue;
+	//  }
+	echo "{$i}단\n";
+	for($num = 1; $num <= 9; $num++) {
+		$mul = $i * $num;
+		echo "{$i} x {$num} = {$mul}\n";
+	}
+}
 
 
