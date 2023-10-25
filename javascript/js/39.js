@@ -31,6 +31,7 @@ TITLE.textContent = '집 가고 싶다';
 // innerHTML : 태그는 태그로 인식해서 전달
 TITLE.innerHTML = '<P>탕수육</P>'
 
+
 // setAttribute('', '') : 요소에 속성을 추가
 // ** 몇몇 속성들은 dom객체에서 바로 설정 가능
 // ex ) INTXT.placeholder = '바로 접근 가능';
