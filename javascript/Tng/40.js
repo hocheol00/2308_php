@@ -1,3 +1,9 @@
+const BTN = document.getElementById('btn');
+function BTN1() {
+	alert('안녕하세요' +'\n'+ 'div를 찾아보세요');
+}
+BTN.addEventListener('click', BTN1);
+
 const DIV1 = document.getElementById('div1');
 
 function FDIV1() {
