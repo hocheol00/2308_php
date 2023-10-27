@@ -1,0 +1,8 @@
+main {
+	width: 100%;
+	max-width: 500px;
+	height: 800px;
+	/* min-height: 800px; */
+	background-color: #000;
+	margin: 100px auto;
+}
