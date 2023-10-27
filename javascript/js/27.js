@@ -58,6 +58,13 @@ arr_map = arr.map( num => {
 	}
 });
 
+
+// if문 줄인거, 나머지가 0인 이면 짝수 아닐경우 홀수출력
+let num = 95;
+console.log(num % 2 === 0 ? '짝수' : '홀수');
+
+
+
 //some() :주어진 함수를 만족하는 요소가 하나라도 있으면 true  (return boolean)
 arr = [ 2 ,3 ,4 ,5 ,6 ,7 ,8 ,9];
 let boo_some = arr.some( num => num > 8);

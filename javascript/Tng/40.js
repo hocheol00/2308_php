@@ -5,14 +5,12 @@ function BTN1() {
 BTN.addEventListener('click', BTN1);
 
 const DIV1 = document.getElementById('div1');
-
 function FDIV1() {
 	alert('DIV1 근처에요 두근두근');
 }
-
 div1.addEventListener('mouseenter', FDIV1);
 
-  
+
 DIV1.addEventListener('click', bingo);
 
 function bingo() {
@@ -30,4 +28,3 @@ function bingo2() {
 	div1.addEventListener('mouseenter', FDIV1);
 	DIV1.addEventListener('click', bingo);
 }
-
