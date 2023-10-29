@@ -68,10 +68,15 @@ clearInterval(myInter);
 
 //위에 소스코드를 정리해서 함수로 만들면 
 //순서 3
-setTimeout(myADDH1, 5000);
+// setTimeout(myADDH1, 5000);
 
-function myADDH1() {
-	const H1 = document.createElement('h1');
-	H1.innerHTML = '옥지얌';
-	document.body.appendChild(H1);
-}
+// function myADDH1() {
+// 	const H1 = document.createElement('h1');
+// 	H1.innerHTML = '옥지얌';
+// 	document.body.appendChild(H1);
+// }
+
+const num = 10;
+
+print();
+console.log('전역 스코프${num}');
