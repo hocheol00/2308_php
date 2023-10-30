@@ -4,31 +4,32 @@ body {
 
 
 .main {
-	width: 100%;
-	max-width: 500px;
-	height: 800px;
+	width: 500px;
+	height: 750px;
 	/* min-height: 800px; */
-	background-color: white;
+	background-color: rgba(243, 246, 255, 1);
 	margin: 100px auto;
 	border-radius: 20px;
 }
 
 .header {
-	color: rgba(91, 137, 255, 1);
+	color: rgb(180, 186, 202);
 	font-size: 50px;
 	width: 500px;
 	height: 110px;
 	line-height: 110px;
 	text-align: center;
-	font-weight: bolder;
+	font-weight: lighter;
 }
 
 .content {
 	width: 450px;
-	height: 500px;
+	height: 600px;
 	overflow: auto;
 	overflow-x: hidden;
-	margin: 30px auto;
+	margin: 10px 0;
+	margin-left: 20px;
+	position: relative;
 }
 
 .content-table {
@@ -36,7 +37,7 @@ body {
 }
 
 td {
-	background-color: rgba(206, 220, 255, 1);
+	background-color:white;
 	border-radius: 5px;
 	height: 64px;
 }
@@ -50,7 +51,7 @@ td {
 	width: 280px;
 	text-align: center;
 }
-
+ 
 .content::-webkit-scrollbar {
 	width: 13px;
     background-color: rgba(217, 217, 217, 1);
@@ -66,22 +67,25 @@ td {
 }
 
 
-.footer {
-	position: relative;
-}
 .menu-trigger {
 	display: inline-block;
-	position: absolute;
-	right: 40px;
-	top: 20px;
-}
+	position: fixed;
+	right: 720px;
+	bottom: 270px;
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: rgba(243, 246, 255, 1);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	}
 
 .menu-trigger span {
   display: block;
-  width: 37px;
-  height: 6px;
-  margin-bottom: 5px;
-  background: #cdcdcd;
+  width: 40px;
+  height: 5px;
+  margin-top: 8.5px;
+  margin-left: 5px;
+  background: #000;
   border-radius: 3px;
   
   /* z-index: 1; */
