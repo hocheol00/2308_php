@@ -1,0 +1,167 @@
+/* 전체영역 */
+
+body {
+	background-color: #000;
+	/* height: 750px; */
+	/* position: relative; */
+}
+
+.main {
+	width: 500px;
+	height: 750px;
+	/* min-height: 800px; */
+	background-color: white;
+	margin: 20px auto;
+	border-radius: 20px;
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+/****************** 헤드영역 **************/
+.header {
+	color: #000;
+	font-size: 50px;
+	width: 500px;
+	height: 110px;
+	line-height: 110px;
+	text-align: center;
+	font-weight: bolder;
+}
+/****************** 컨텐츠 영역 **************/
+.content {
+	width: 450px;
+	height: 550px;
+	overflow: auto;
+	overflow-x: hidden;
+	margin: 10px 0;
+	margin-left: 20px;
+}
+
+.content-table {
+	border-spacing: 30px;
+}
+
+td {
+	background-color:rgba(243, 246, 255, 1);
+	border-radius: 5px;
+	height: 64px;
+	
+}
+
+.td-title {
+	width: 80px;
+	text-align: center;
+}
+
+.td-content {
+	width: 280px;
+	text-align: center;
+}
+ 
+.content::-webkit-scrollbar {
+	width: 10px;
+    background-color: rgba(217, 217, 217, 1);
+	border-radius: 5px;
+	
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: rgba(180, 180, 180, 1);
+	border-radius: 5px;
+	background-clip: padding box;
+	
+}
+
+
+/***********************바텀영역 ***********/
+/* .footer {
+	position: absolute;
+	bottom: 0px;
+	width: 450px;
+	height: 50px;
+} */
+
+/* .footer-div {
+	position: relative;
+} */
+.menu-trigger {
+	display: inline-block;
+	position: absolute;
+	right: 20px;
+	bottom: 40px;
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: rgba(206, 220, 255, 1);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	}
+
+.menu-trigger span {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-top: 8.5px;
+  margin-left: 5px;
+  background: #000;
+  border-radius: 4px;
+}
+.insert-box {
+	width: 100px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    right: 25px;
+    bottom: 120px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.a-insert {
+	width: 50px;
+    height: 50px;
+    display: inline-block;
+    line-height: 42px;
+    text-decoration: none;
+    color: rgba(123, 123, 123, 1);
+    font-size: 20px;
+}
+
+#hidden1, #hidden2, #hidden3 {
+	display: none;
+}
+
+
+.a-insert1 {
+	display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(148, 178, 255, 1);
+    border-radius: 5px;
+}
+
+.xcopy-box {
+	width: 100px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    right: 25px;
+    bottom: 190px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.xcopy-box2 {
+	width: 95px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    right: 25px;
+    bottom: 260px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
