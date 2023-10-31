@@ -34,3 +34,57 @@
 		// // 	,name: '호철임'
 		// }
 	// }
+
+	const MYURL = "https://picsum.photos/v2/list?page=2&limit=5";
+	const BTNAPI = document.querySelector('#btn-api');
+	BTNAPI.addEventListener('click', my_fetch);
+	const BTNDELETE = document.querySelector('#btn-delete');
+	BTNDELETE.addEventListener('click', my_delete);
+
+	function my_fetch() {
+		const INPUT_URL = document.querySelector('#input-url');
+
+		fetch(INPUT_URL.value.trim())
+		.then( response => {
+			if( response.status >= 200 && response.status < 300 ){
+				return response.json();
+			} else {
+				console.log(response)
+				throw new Error('에러');
+			}
+		})
+		.then( data => makeImg(data) )
+		.catch( error => console.log(error) );
+	}
+	
+	function makeImg(data) {
+		data.forEach( item => {
+			const TAGIMG = document.createElement('img');
+			const DIVIMG = document.querySelector('#div-img');
+			TAGIMG.setAttribute('src', item.download_url)
+			TAGIMG.style.width = '200px';
+			TAGIMG.style.height = '200px';
+			DIVIMG.appendChild(TAGIMG);
+		});
+	}
+
+	// function my_delete() {
+	// 	let test = document.getElementsByTagName('img').length;
+	// 	for(let i=0; i < test; i++){
+	// 		const TAGIMG2 = document.querySelector('img');
+	// 		TAGIMG2.remove();
+	// 	}
+		
+	
+	// }
+	function my_delete() {
+		const IMG = document.querySelectorAll('img');
+		for(let i = 0; i < IMG.length; i++) {
+			IMG[i].remove();
+		}
+	}
+	
+
+	//방법 2
+	const DIV_IMG = document.querySelector('#div-img');
+	DIV_IMG.innerHTML = "";
