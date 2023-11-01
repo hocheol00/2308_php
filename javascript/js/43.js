@@ -35,6 +35,8 @@
 		// }
 	// }
 
+
+
 	const MYURL = "https://picsum.photos/v2/list?page=2&limit=5";
 	const BTNAPI = document.querySelector('#btn-api');
 	BTNAPI.addEventListener('click', my_fetch);
@@ -88,3 +90,24 @@
 	//방법 2
 	const DIV_IMG = document.querySelector('#div-img');
 	DIV_IMG.innerHTML = "";
+
+
+
+	// fetch 2번쩨 이규먼트 셋팅 방법
+	function infinityLoop() {
+		let apiurl = "https://192.168.0.82/03_insert.php"
+		let init = {
+			method: "POST"
+			// ,headers: {
+			// 	accept: '*'
+			// }
+			,body: {
+				title: "빵빵이"
+				,content: "푸바오"
+				,EM_ID: "2"
+			}
+		};
+		fetch(apiurl, init)
+		.then( response => console.log(response) )
+		.catch( error => console.log(error) );
+	}

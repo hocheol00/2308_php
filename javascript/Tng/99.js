@@ -1,6 +1,8 @@
 const MYURL = "https://picsum.photos/v2/list?page=2&limit=5";
 const BTN = document.querySelector('#btn');
 BTN.addEventListener('click',  my_fetch);
+const BTNDELETE = document.querySelector('#btn-delete');
+BTNDELETE.addEventListener('click', my_delete);
 
 function my_fetch() {
 	const INPUT = document.querySelector('#input');
@@ -39,5 +41,13 @@ function makeImg(data) {
 		TAG_DIV.appendChild(TAG_IMG);
 		
 	})
+}
+
+// 삭제 함수
+function my_delete() {
+	const IMG = document.querySelectorAll('img')
+	for(let i = 0; i < IMG.length; i++) {
+		IMG[i].remove();
+	}
 }
 

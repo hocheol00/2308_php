@@ -1,0 +1,54 @@
+/* ****전체영역 필수로 주고 시작하장 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* ********상위 영역 */
+header {
+	background-color: black;
+	color: white;
+	padding: 2rem;
+}
+
+h1 {
+	font-size: 4rem;
+	text-align: center;
+}
+
+main {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.sectionInput {
+	text-align: center;
+	width: 300px;
+	margin: 3rem auto;
+}
+
+#inputUrl {
+	width: 100%;
+}
+
+.sectionContents {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 5px;
+}	
+
+article {
+	background-color: gray;
+	text-align: center;
+}
+
+.articleId {
+	font-size: 2rem;
+	font-weight: 800;
+	
+}
+
+.articleImg {
+	width: 90%;
+	margin: 0 auto;
+}
