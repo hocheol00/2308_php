@@ -59,8 +59,8 @@ $conn = null;
 				{
 			?>
 				<tr>
-					<td class="td-title"><a class="a-link" href="detail.php/?id=<?php echo $item["id"];?>"><?php echo $item["id"];?></a></td>
-					<td class="td-content"><a class="a-link" href="detail.php/?id=<?php echo $item["title"];?>"><?php echo $item["title"];?></a></td> 
+					<td class="td-title"><a class="a-link" href="detail.php/?id=<?php echo $item["id"]; ?>"><?php echo $item["id"];?></a></td>
+					<td class="td-content"><a class="a-link" href="detail.php/?id=<?php echo $item["id"]; ?>"><?php echo $item["title"];?></a></td> 
 				</tr>
 				
 				<?php

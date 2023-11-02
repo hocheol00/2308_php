@@ -136,17 +136,17 @@
 	function db_insert_crud(&$conn, &$arr_param) {
 		$sql =
 			" INSERT INTO crud ( "
-			." id "
-			." ,title "
+			." title "
+			." ,content "
 			." ) "
 			." VALUES ( "
-			." :id "
-			." ,:title "
+			." :title "
+			." ,:content "
 			." ) "
 			;
 		$arr_ps = [
-			":id" => $arr_param["id"]
-			,":title" => $arr_param["title"]
+			":title" => $arr_param["title"]
+			,":content" => $arr_param["content"]
 		];
 		try {
 			$stmt = $conn->prepare($sql);
@@ -157,6 +157,43 @@
 		}
 	}
 
+
+	// ----------------------------
+	//특정 아이디의 게시글 정보를 가져오기
+	// 함수명 	: db_select_crud_id
+	// 기능 	: 
+	// 파라미터 : PDO 	&$conn
+	//			Array	&$arr_param 쿼리 작성용 배열
+	// 리턴 	: boolean
+	// ----------------------------
+
+
+	function db_select_crud_id(&$conn, &$arr_param) {
+		$sql =
+			" SELECT "
+			." title "
+			." ,content "
+			." FROM "
+			." crud "
+			." WHERE "
+			." id = :id "
+			." AND "
+			." delete_flg = '0' "
+			;
+			$arr_ps = [
+				":id" => $arr_param["id"]
+			];
+
+			try {
+			$stmt = $conn->prepare($sql);
+			$stmt->execute($arr_ps);
+			$result = $stmt->fetchAll();
+			return $result;
+		} catch(Exception $e) {
+			echo $e->getMessage();
+			return false;
+		}
+	}
 
 
 

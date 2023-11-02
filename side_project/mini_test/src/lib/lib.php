@@ -136,20 +136,20 @@
 	//			Array	&$arr_param 쿼리 작성용 배열
 	// 리턴 	: Boolean
 	// ----------------------------
-	function db_insert_test(&$conn, &$arr_param) {
+	function db_insert_crud(&$conn, &$arr_param) {
 		$sql =
 			" INSERT INTO test ( "
 			." title "
-			." ,name_t "
+			." ,content "
 			." ) "
 			." VALUES ( "
 			." :title "
-			." ,:name_t "
+			." ,:content "
 			." ) "
 			;
 		$arr_ps = [
 			":title" => $arr_param["title"]
-			,":name_t" => $arr_param["name_t"]
+			,":content" => $arr_param["content"]
 		];
 		try {
 			$stmt = $conn->prepare($sql);
