@@ -1,0 +1,20 @@
+<?php
+
+namespace controller;
+
+class ParentsController {
+	protected $controllerChkUrl;
+
+	public function __construct($action) {
+		// view 관련 체크 접속 url 셋팅
+		$this -> controllerChkUrl = $_GET["url"];
+
+		// constroller 메소드 호출
+		$resultAction = $this->$action();
+
+		// view 호출
+		require_once($resultAction);
+		exit();
+	}
+}
+
