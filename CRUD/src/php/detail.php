@@ -1,7 +1,7 @@
 <?php
-define("ROOT",$_SERVER["DOCUMENT_ROOT"]."/src/php/");
-define("FILE_HEADER", ROOT."header.php"); // 해더 패스
-require_once(ROOT."../lib/lib.php"); // db관련 라이브러리
+define("ROOT",$_SERVER["DOCUMENT_ROOT"]."/src");
+// define("FILE_HEADER", ROOT."header.php"); // 해더 패스
+require_once(ROOT."/lib/lib.php"); // db관련 라이브러리
 
 $conn = null;
 $id = ""; // 게시글 아아디
@@ -42,7 +42,7 @@ try {
         throw new Exception("DB Error : PDO Select_id count, ".count($result));
     } 
     $item = $result[0]; // 
-	var_dump($item);
+	// var_dump($item);
 
 } catch(Exception $e) {
     echo $e->getMessage();
@@ -61,32 +61,29 @@ try {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>상세페이지</title>
+	<title>Document</title>
 	<link rel="stylesheet" href="/src/css/common.css">
 </head>
-
 <body>
 	<div class="main">
-		<div class="header"><a href="/src/php/list.php">TO-DO-LIST</a></div>
-		<div class="main_detail">
-			<div class="detail-content">
-				<?php 
-					foreach($result as $item) {
-				?>
-				<!-- <div id="YmdDate"> 달력--> 
-				<div class="title-box" id="title" name="title"><?php echo $item["title"] ?></div>
-				<div class="content-box" name="content" id="content"><?php echo $item["content"] ?></div>
-				<?php } ?>
-				<br>
-				<div class="grid">
-					<button type="submit">작 성</button>
-					<button class="insert-delete" type="button" onclick="location.href='/src/php/list.php'">이 전</button>
-					<!-- <a class="insert-delete" href="/src/php/list.php">이전</a> -->
-				</div>
-			</div>	
+		<div class="header">
+			TO-DO-LIST
 		</div>
-	</div>
 
-	<script src="../css/insert.js"></script>
+		<div class="bg">	
+			<div class="detail-date-box">
+				<div class="detail-date"><? echo $item["create_at"]; ?></div>
+				<div class="detail-update"><? echo $item["update_at"]; ?></div>
+			</div>
+			<div class="title-box2"><? echo $item["title"]; ?></div>
+			<div class="content-box2"><?php echo $item["content"]; ?></div>
+			<div class="detail-btn-box">
+				<button type="button" onclick="location.href='/src/php/update.php?id=<?php echo $id; ?>'">수 정</button>
+				<button type="button" onclick="location.href='/src/php/list.php'">이 전</button>
+				<button type="button" onclick="location.href='/src/php/delete.php'">삭 제</button>
+			</div>
+		</div>
+
+	 </div>
 </body>
 </html>

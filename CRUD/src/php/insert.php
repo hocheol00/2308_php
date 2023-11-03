@@ -1,7 +1,7 @@
 <?php
-define("ROOT",$_SERVER["DOCUMENT_ROOT"]."/src/php/");
-define("FILE_HEADER", ROOT."header.php"); // 해더 패스
-require_once(ROOT."../lib/lib.php"); // db관련 라이브러리
+define("ROOT",$_SERVER["DOCUMENT_ROOT"]."/src");
+// define("FILE_HEADER", ROOT."header.php"); // 해더 패스
+require_once(ROOT."/lib/lib.php"); // db관련 라이브러리
 
 $conn = null; //db connection 변수
 $http_method = $_SERVER["REQUEST_METHOD"]; //method 확인
@@ -77,14 +77,14 @@ if($http_method === "POST") {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>작성페이지</title>
-	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="/src/css/common.css">
 </head>
 
 <body>
 	<div class="main">
 		<div class="header"><a href="/src/php/list.php">TO-DO-LIST</a></div>
 		<div class="main_insert">
-			<form action="insert.php" method="post">
+			<form action="insert.php" method="POST">
 				<input type="date" id="YmdDate">
 				<input type="text" id="title" name="title" placeholder="제목" value="<?php echo $title ?>">
 				<textarea name="content" id="content" <?php echo $content ?> placeholder="오늘의 내용"></textarea>

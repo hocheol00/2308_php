@@ -1,7 +1,7 @@
 <?php
-define("ROOT",$_SERVER["DOCUMENT_ROOT"]."/src/php/");
-define("FILE_HEADER", ROOT."header.php"); // 해더 패스
-require_once(ROOT."../lib/lib.php"); // db관련 라이브러리
+define("ROOT",$_SERVER["DOCUMENT_ROOT"]."/src");
+// define("FILE_HEADER", ROOT."header.php"); // 해더 패스
+require_once(ROOT."/lib/lib.php"); // db관련 라이브러리
 
 $conn = null;
 	$http_method = $_SERVER["REQUEST_METHOD"];
@@ -47,7 +47,7 @@ $conn = null;
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="/src/css/common.css">
 </head>
 <body>
 	 <div class="main">
