@@ -10,16 +10,18 @@
 	<?php require_once("view/inc/header.php"); ?>
 
 	<main class="d-flex justify-content-center align-items-center h-75">
-		<form style="width: 300px;" action="/board/list">
-			<div id="errorMsg" class="form-text text-danger">빵빵이는 푸바오 입니다 삐삑!!</div>
+		<form style="width: 300px;" action="/user/login" method="POST">
+			<div id="errorMsg" class="form-text text-danger">
+				<?php echo count($this->arrErrorMsg) > 0 ? implode("<br>", $this->arrErrorMsg) : "" ?>
+			</div>
 			<div class="mb-3">
 			  <label for="u_id" class="form-label">아이디</label>
-			  <input type="email" class="form-control w-100" id="u_id"" aria-describedby="emailHelp">
+			  <input type="text" class="form-control w-100" id="u_id" name="u_id" aria-describedby="emailHelp">
 			  
 			</div>
 			<div class="mb-3">
 			  <label for="u_pw" class="form-label">비밀번호</label>
-			  <input type="password" class="form-control" id="u_pw">
+			  <input type="password" class="form-control" id="u_pw" name ="u_pw">
 			</div>
 			<button type="submit" class="btn btn-dark">로그인</button>
 		  </form>
