@@ -189,7 +189,7 @@ form {
 form input {
 	width: 280px;
 	height: 65px;
-	margin: 15px auto;
+	margin: 10px auto;
 	text-align: center;
 	border: none;
 }
@@ -197,7 +197,7 @@ form input {
 form textarea {
 	width: 280px;
     height: 250px;
-    margin-top: 15px;
+    margin-top: 10px;
 	resize: none;
 	text-align: center;
 	padding: 10px;
@@ -312,17 +312,12 @@ textarea:focus {
 
 /* *************update */
 
-.main_update {
-	background-color: rgba(243, 246, 255, 1);
-	width: 100%;
-    height: 75%;
-}
 
 .update-date-box {
 	background-color: white;
 	width: 280px;
 	height: 65px;
-	margin: 15px auto;
+	margin: 10px auto;
 	text-align: center;
 	display: grid;
 	border-radius: 10px;
@@ -348,7 +343,7 @@ form {
 form input {
 	width: 280px;
 	height: 65px;
-	margin: 15px auto;
+	margin: 10px auto;
 	text-align: center;
 	border: none;
 }
@@ -356,7 +351,96 @@ form input {
 form textarea {
 	width: 280px;
     height: 250px;
-	margin: 15px auto;
+	resize: none;
+	text-align: center;
+	padding: 10px;
+	border: none;
+}
+
+form button {
+	width: 70px;
+	height: 40px;
+}
+
+input:focus {
+	outline:none;
+}
+
+textarea:focus {
+	outline:none;
+}
+
+.grid {
+	display: grid;
+    width: 260px;
+    grid-template-columns: repeat(2, 1fr);
+    /* margin: 10px auto; */
+    place-items: center;
+}
+
+.grid button {
+	background-color: white;
+	border-radius: 10px;
+	border-color:  rgba(243, 246, 255, 1);
+}
+
+.grid a {
+	border-radius: 10px;
+    background-color: white;
+    width: 70px;
+    height: 40px;
+    border-color: rgba(243, 246, 255, 1);
+    line-height: 40px;
+	
+}
+
+
+/* *************delete */
+
+.main_update {
+	background-color: rgba(243, 246, 255, 1);
+	width: 100%;
+    height: 75%;
+}
+
+.delete-date-box {
+	background-color: white;
+	width: 280px;
+	height: 65px;
+	margin: 10px auto;
+	text-align: center;
+	display: grid;
+	border-radius: 10px;
+	grid-template-columns: repeat(2, 1fr);
+}
+.delete-date {
+	line-height: 65px;
+	width: 140px;
+	height: 65px;
+}
+
+.delete-update {
+	line-height: 65px;
+	width: 140px;
+	height: 65px;
+}
+
+form {
+	text-align: center;
+	
+}
+
+form input {
+	width: 280px;
+	height: 65px;
+	margin: 10px auto;
+	text-align: center;
+	border: none;
+}
+
+form textarea {
+	width: 280px;
+    height: 250px;
 	resize: none;
 	text-align: center;
 	padding: 10px;

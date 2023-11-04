@@ -66,8 +66,8 @@ try {
 </head>
 <body>
 	<div class="main">
-		<div class="header">
-			TO-DO-LIST
+		<div class="header" >
+		<a href="/src/php/list.php">TO-DO-LIST</a>
 		</div>
 
 		<div class="bg">	

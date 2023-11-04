@@ -96,7 +96,7 @@ $http_method = $_SERVER["REQUEST_METHOD"]; //method 확인
 				<br>
 				<div class="grid">
 					<button type="submit">작 성</button>
-					<button class="insert-delete" type="button" onclick="location.href='/src/php/list.php'">이 전</button>
+					<button class="insert-delete" type="button" onclick="location.href='detail.php?id=<?php echo $id; ?>'">이 전</button>
 					<!-- <a class="insert-delete" href="/src/php/list.php">이전</a> -->
 				</div>
 			</form>
