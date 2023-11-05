@@ -1,0 +1,10 @@
+// function Delete() {
+//     let confirmed = confirm("삭제하시겠습니까?");
+    
+//     if (confirmed) {
+//         simulateDelete(); // 삭제 동작 시뮬레이션
+//     } else {
+//         // 사용자가 취소한 경우
+//     }
+// }
+// 

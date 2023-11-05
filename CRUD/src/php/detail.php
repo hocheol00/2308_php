@@ -80,11 +80,12 @@ try {
 			<div class="detail-btn-box">
 				<button type="button" onclick="location.href='/src/php/update.php?id=<?php echo $id; ?>'">수 정</button>
 				<button type="button" onclick="location.href='/src/php/list.php'">이 전</button>
-				<button type="button" onclick="confirmDelete()">삭 제</button>
+               
+				<button type="button" onclick="Delete" id="delete-btn">삭 제</button>
 			</div>
 		</div>
 
 	 </div>
-     <script src="../css/delete.js"></script>
+     <script src="/src/css/delete.js"></script>
 </body>
 </html>

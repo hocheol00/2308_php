@@ -1,5 +1,0 @@
-SELECT c_id
-FROM chal_info
-GROUP BY c_id;
-
-FLUSH PRIVILEGES;
