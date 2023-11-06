@@ -31,21 +31,22 @@ class ParentsModel {
 		}
 		//DB 파기
 		public function destroy() {
-			$this->coon = null;
+			$this->conn = null;
 		}
 
 		// beginTransction
-		public function beginTransction() {
-			$this->conn->beginTransction();
+		public function beginTransaction() {
+			$this->conn->beginTransaction();
+			
 		}
 
 		//commit
 		public function commit() {
-			$this->coon->commit();
+			$this->conn->commit();
 		}
 		
 		//rollBack
 		public function rollBack() {
-			$this->coon->rollBack();
+			$this->conn->rollBack();
 		}
 	}
