@@ -12,6 +12,7 @@ class ParentsController {
 	//비로그인 시 접속 불가능한 url 리스트
 	private $arrNeedAuth = [
 		"board/list"
+		,"board/add"
 	];
 
 	public function __construct($action) {

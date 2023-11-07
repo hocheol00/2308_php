@@ -49,6 +49,63 @@ class UserController extends ParentsController{ //상속받고있는 클래스 �
 		return "view/regist"._EXTENSION_PHP;
 	}
 
+
+	// 회원가입 처리
+	protected function registPost() {
+		$u_id = $_POST["u_id"];
+		$u_pw = $_POST["u_pw"];
+		$u_pw_chk = $_POST["u_pw_chk"];
+		$u_name = $_POST["u_name"];
+		$arrAddUserInfo = [
+			"u_id" => $u_id
+			,"u_pw" => $this->encryptionPassword($u_pw)
+			,"u_name" => $u_name
+		];
+
+		// $patternID = "/^[a-zA-Z0-9]+$/"; // 정규식
+		$patternId = "/^[a-zA-Z0-9]{8,20}$/";
+		$patternPw = "/^[a-zA-Z0-9!@]{8,20}$/";
+		$patternName = "/^[a-zA-Z가-힣]{2,50}$/u"; // 한글 처리할때는 u 넣어야함 
+
+		if(preg_match($patternId, $u_id, $match) === 0) {
+			// id 에러처리
+			$this->arrErrorMsg[] = "아이디는 영어 대소문자와 숫자로 8~20자로 입력해 주세요.";
+		}
+		if(preg_match($patternPw, $u_pw, $match) === 0) {
+			// pw 에러처리
+			$this->arrErrorMsg[] = "비밀번호는 영어 대소문자와 숫자로, !, @ 8~20자로 입력해 주세요.";
+		}
+		if($u_pw !== $u_pw_chk) {
+			// pw 확인 에러처리
+			$this->arrErrorMsg[] = "비밀번호와 비밀번호 확인이 서로 다릅니다";
+		}
+		if(preg_match($patternName, $u_name, $match) === 0) {
+			// name 에러처리
+			$this->arrErrorMsg[] = "이름는 영어 대소문자와 한글로 2~50자로 입력해 주세요.";
+		}
+
+		// TODO : 아이디 중복 체크 필요
+
+
+		// 유효성 체크 실패
+		if(count($this->arrErrorMsg) > 0) {
+			return "view/regist.php";
+		}
+
+		// 인서트 처리
+		$userModel = new UserModel();
+		$userModel->beginTransaction();
+		$result = $userModel->addUserInfo($arrAddUserInfo);
+
+		if($result !== true) {
+			$userModel->rollBack();
+		} else {
+			$userModel->commit();
+		}
+		$userModel->destroy();
+		return "Location: /user/login";
+	}
+
 	// 비밀번호 암호화
 	private function encryptionPassword($pw) {
 		return base64_encode($pw);

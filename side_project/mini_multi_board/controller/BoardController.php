@@ -59,7 +59,7 @@ class BoardController extends ParentsController {
 		];
 	// 이미지 파일 저장
 		move_uploaded_file($_FILES["b_img"]["tmp_name"], _PATH_USERIMG.$b_img);
-		
+
 		// 인서트 처리
 		$boardModel = new BoardModel();
 		$boardModel->beginTransaction();
@@ -74,5 +74,32 @@ class BoardController extends ParentsController {
 		$boardModel->destroy();
 
 		return "Location: /board/list?b_type=".$b_type;
+	}
+
+	// 상세 정보 API
+	protected function detailGet() {
+		$id = $_GET["id"];
+
+		$arrBoardDetailInfo = [
+			"id" => $id
+		];
+
+		$boardModel = new BoardModel();
+		$result = $boardModel->getBoardDetail($arrBoardDetailInfo);
+
+		$result[0]["b_img"] = "/"._PATH_USERIMG.$result[0]["b_img"];
+		// 레스폰스 데이터 작성
+		$arrTmp = [
+			"errflg" => "0"
+			,"msg" => ""
+			,"data" => $result[0]
+		];
+		$response = json_encode($arrTmp);
+
+		//respone 처리
+		header('Content-type: application/json');
+		echo $response;
+		exit();
+
 	}
 }

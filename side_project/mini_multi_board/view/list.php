@@ -22,12 +22,13 @@
 			foreach($this->arrBoardInfo as $item) {
 		?>
 
-		<div class="card">
+		<div class="card" id="<?php echo $item["id"];?>">
 			<img src="<?php echo isset($item["b_img"]) ? "/"._PATH_USERIMG.$item["b_img"] : ""; ?>" class="card-img-top" alt="이미지 없음">
 			<div class="card-body">
 			  <h5 class="card-title"><?php $item["b_title"]?></h5>
 			  <p class="card-text"><?php echo mb_substr( $item["b_content"], 0, 10 )."..." ?></p>
-			  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail">상세</button>
+			  <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail">상세</button> -->
+			  <button class="btn btn-primary" onclick="openDetail(<?php echo $item['id'] ?>); return false;">상세</button>
 			</div>
 		  </div>
 
@@ -37,28 +38,34 @@
 	</main>
   
   <!-- Modal -->
-  <div class="modal fade" id="modalDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalDetail" tabindex="-1" aria-hidden="true">
 	<div class="modal-dialog">
 	  <div class="modal-content">
 		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		  <h5 class="modal-title" id="b_title">개발자입니다</h5>
+		  <button type="button" onclick="closeDetailModal(); return false;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-		  ...
+		  <p>작성일 :<span id="created_at"></span></p>
+		  <p>수정일 :<span id="updated_at"></span></p>
+		  <br><br>
+		  <span id="b_content">살려주세요</span>
+		 
+		  <br><br>
+		  <img id="b_img" src="" claas="card-img-top" alt="">
 		</div>
 		<div class="modal-footer">
-		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 		</div>
 	  </div>
 	</div>
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
 	<div class="modal-dialog">
 	  <div class="modal-content">
-		<form action="/board/add" method="POST" enctype="multipart/form-date">
+		<form action="/board/add" method="POST" enctype="multipart/form-data">
 		<input type="hidden" name="b_type" value="<?php echo $this->boardType; ?>">
 		<div class="modal-header">
 		<input type="text" name="b_title" class="form-control" placeholder="제목을 입력하세요">
@@ -80,6 +87,7 @@
 	<footer class="fixed-bottom bg-dark text-light text-center p-3">저작권</footer>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="/view/js/common.js"></script>
 </body>
 </html> 
 
