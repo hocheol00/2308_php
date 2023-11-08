@@ -70,29 +70,70 @@ function checkId() {
 
 
 
-// 아이디 체크 모달 제어 POST방식
+
+
+
+
+// 아이디 체크 POST 다른 방식 - 라우터 부분
+// router 조건 $url === "/user/idchk" else if문 작성
+// else if($url === "/user/idchk") {
+// if($method === "POST") {
+// new BoardController("idchkPOST");
+
+
+//<유저컨트롤러>
+// protected function idchkPOST() {
+//   $errorMsg = "";
+//   $inputData = [
+//     "u_id" => $_POST["u_id"]
+//   ];
+// 유효성 체크
+// if(!Validation::userChk($inputData)) { // 유효성 체크
+// $errorflg = "1";
+// $errorMsg = Validation::getArrErrorMsg()[0];
+// }
+// 중복 체크
+// $userModel = new UserModel();
+// $result = $userModel->getUserInfo($inputData);
+// $userModel->destroy();
+// if(count($result) > 0) {
+//  $errorFlg = "1";
+//  $errorMsg = "중복된 아이디 입니다.";
+// }
+// response 처리
+// $response = [
+//  "errflg" =>$errorFlg
+//  ,"msg" => $errorMsg
+//  ];
+// header('Content-type: application/json');
+// echo json_encode($inputData);
+// exit();
+
+
+
+// js 함수
 // function idChk() {
 //   const INPUTID = document.getElementById('u_id');
 //   const URL = '/user/idchk';
+//   const ID_CHK_MSG = document.getElementById('idChkMsg');
+//   ID_CHK_MSG.innerHTML = ""; // 기존에 있을지도 모르는 메세지 비우는 처리
 //   const formData = new FormData(); // 새로운 폼 객체 생성
 //   FormData.append("u_id", INPUT_ID.value); // 유저 입력아이디 폼에 세팅
 //   const HEADER = { // header정보 세팅
 //     method: "POST"
 //     ,body:FormData
 //   };
+// 에러메시지 출력용으로 span태그로 regist.php input주변에 작성
 //   fetch(URL, HEADER)
 //     .then( response => response.json())
 //     .then( data => {
-// 		if(data.errflg === "0") {
-// 			ID_CHK_MSG.innerHTML = "사용 가능한 아이디 입니다."
-// 			ID_CHK_MSG.innerHTML = "text-success.";
-// 		} else {
-// 			ID_CHK_MSG.innerHTML = "이미 가입된 아이디 입니다.."
-// 			ID_CHK_MSG.innerHTML = "text-danger.";
-// 		}
-// 	})
+//   if(data.errflg === "") {
+//     ID_CHK_MSG.innerHTML = "사용 가능한 아이디입니다."
+//     ID_CHK_MSG.classList = 'text-success';
+//   } else {
+//     ID_CHK_MSG.innerHTML = "사용할 수 없는 아이디입니다."
+//     ID_CHK_MSG.classList = 'text-danger';
+//   }
+// })
 //     .catch((error) => console.log(error));
 // }
-
-
-
