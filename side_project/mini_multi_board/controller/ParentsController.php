@@ -44,7 +44,6 @@ class ParentsController {
 	// 유저 권한 체크용 메소드
 	private function chkAuthorization() {
 		$url = $_GET["url"];
-
 		// 접속권한이 없는 페이지 접속 차단
 		if( !isset($_SESSION["u_pk"]) && in_array($url, $this->arrNeedAuth) ) {
 			header("Location: /user/login");-

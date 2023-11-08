@@ -56,8 +56,15 @@ class Router {
 			if($method === "GET") {
 				new BoardController("detailGet");
 			}
-		}
-
+		} else if($url === "user/idchk") {
+			if($method === "GET") {
+				new UserController("idchkGet");
+			}
+		} 
+		// router 조건 $url === "/user/idchk" else if문 작성
+		// else if($url === "/user/idchk") {
+		// if($method === "GET") {
+		// new BoardController("idchkGet");
 		echo "이상한 URL : ".$url;
 		exit();
 	}

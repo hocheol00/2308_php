@@ -62,6 +62,27 @@ class UserController extends ParentsController{ //상속받고있는 클래스 �
 		return "view/regist"._EXTENSION_PHP;
 	}
 
+	// 아이디 중복 확인
+	
+	protected function idchkGet() {
+		$id = $_GET["u_id"];
+
+		$useridchk = new userModel();
+		$result = $useridchk->getuseridchk($id);
+
+		$arrTmp = [
+			"errflg" => "0"
+			,"msg" => ""
+			,"data" => $result[0]
+		];
+		$response = json_encode($arrTmp);
+
+		//respone 처리
+		header('Content-type: application/json');
+		echo $response;
+		exit();
+	}
+
 
 	// 회원가입 처리
 	protected function registPost() {
@@ -77,9 +98,12 @@ class UserController extends ParentsController{ //상속받고있는 클래스 �
 			,"u_pw" => $this->encryptionPassword($_POST["u_pw"])
 			,"u_name" => $_POST["u_name"]
 		];
+		
+
+	
+
 
 		// TODO : 발리데이션 체크
-		
 	
 		// 유효성 체크
 		if(!Validation::userChk($inputData)) {

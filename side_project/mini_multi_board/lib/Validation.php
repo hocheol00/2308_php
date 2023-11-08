@@ -32,7 +32,7 @@ class Validation {
 				self::setArrErrorMsg($msg);
 			}
 		}
-		
+
 		// 비밀번호 체크
 		if(array_key_exists("u_pw", $inputData)){
 			if(preg_match($patternPw, $inputData["u_pw"], $match) === 0) {
