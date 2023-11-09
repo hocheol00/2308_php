@@ -27,7 +27,7 @@ CREATE TABLE delivery(
 
 --  REFERENCES USER(id);on cascaded
 -- on cascaded : 연결된 부모가 업데이트 되거나 하면 자식까지 같이 변경되는 것
--- CONSTRAINT : 제약조건
+-- CONSTRAINT : 제약조건 (데이터의 이상현상을 막기위해)
 
 ALTER TABLE delivery
 ADD CONSTRAINT fk_delivery_u_id FOREIGN KEY (u_id)
@@ -38,3 +38,5 @@ ADD CONSTRAINT fk_delivery_p_id FOREIGN KEY (p_id)
 REFERENCES productinfo(id);
 
 COMMIT;
+
+-- DROP TABLE delivery;  테이블 삭제 
