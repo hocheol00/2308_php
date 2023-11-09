@@ -31,7 +31,11 @@ class ParentsController {
 		// 지역변수를 맴버변수로 변경하는 과정
 		$boardNameModel = new BoardNameModel();
 		$this->arrBoardNameInfo = $boardNameModel->getBoardNameList(); 
+		//보드네임 모델 변수안에있는 보드네임 모델 클래스내에 있는 네임리스트 메소드를 호출해서
+		// 그리턴값을 어레이보드네임이포에 값을 변경을 해준다
 		$boardNameModel->destroy();
+
+	
 
 		// constroller 메소드 호출
 		$resultAction = $this->$action();

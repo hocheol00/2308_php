@@ -5,9 +5,9 @@ namespace controller;
 use model\BoardModel;
 
 class BoardController extends ParentsController {
-	protected $arrBoardInfo;
+	protected $arrBoardInfo; 
 	protected $titleBoardName;
-	protected $boardType;
+	protected $boardType; 
 
 	//게시판 리스트 페이지
 	protected function listGet() {
@@ -60,6 +60,8 @@ class BoardController extends ParentsController {
 	// 이미지 파일 저장
 		move_uploaded_file($_FILES["b_img"]["tmp_name"], _PATH_USERIMG.$b_img);
 
+
+
 		// 인서트 처리
 		$boardModel = new BoardModel();
 		$boardModel->beginTransaction();
@@ -87,12 +89,21 @@ class BoardController extends ParentsController {
 		$boardModel = new BoardModel();
 		$result = $boardModel->getBoardDetail($arrBoardDetailInfo);
 
+		// 이미지 패스 재설정
 		$result[0]["b_img"] = "/"._PATH_USERIMG.$result[0]["b_img"];
+
+
+		// 작성 유저 플레그 설정
+		$flg = ($_SESSION["u_pk"] === $result[0]["u_pk"]) ? "1": "0";
+
+		// $result[0]["uflg"] = $result[0]["u_pk"] === $_SESSION["u_pk"] ? "1" : "0"; 쌤이 한거
+
 		// 레스폰스 데이터 작성
 		$arrTmp = [
 			"errflg" => "0"
 			,"msg" => ""
 			,"data" => $result[0]
+			,"flg" => $flg
 		];
 		$response = json_encode($arrTmp);
 
@@ -102,4 +113,26 @@ class BoardController extends ParentsController {
 		exit();
 
 	}
+
+	// 삭제
+	protected function deleteGet() {
+
+		$id = isset($_GET["id"]) ? $_GET["id"] : "";
+
+	$boardDelete = new BoardModel(); // 쿼리문을 쓰겠따
+	$boardDelete->beginTransaction();
+	$result = $boardDelete->boardDelete($id);
+	if($result !== true) {
+		$boardDelete->rollBack();
+	} else {
+		$boardDelete->commit();
+	}
+
+		// 모델 파기
+		$boardDelete->destroy();
+
+	return "Location: /board/list";
+	}
+
+
 }

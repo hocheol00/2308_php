@@ -14,18 +14,32 @@ function openDetail(id) {
 		const IMG = document.querySelector('#b_img');
 		const CREATEDAT = document.querySelector('#created_at');
 		const UPDATEDAT = document.querySelector('#updated_at');
+		const DELETEID = document.querySelector('#deleteId');
+		const BTNDELETE = document.querySelector('#btn-delete');
 
 		UPDATEDAT.innerHTML = data.data.updated_at;
 		CREATEDAT.innerHTML = data.data.created_at;
 		TITLE.innerHTML = data.data.b_title;
 		CONTENT.innerHTML = data.data.b_content;
 		IMG.setAttribute('src', data.data.b_img); // 속성 넣어주는 코드
+		DELETEID.value = data.data.id;
+		
+		if(data.flg === "1") {
+			BTNDELETE.style.display = 'block';
+		} else {
+			BTNDELETE.style.display = 'none';
+		}
 
 		// 모달 오픈
 		openModal();
+	
 	} )
 	.catch( error => console.log(error) )
+
+
 }
+
+
 // 모달 오픈 함수
 function openModal() {
 	const MODAL = document.querySelector('#modalDetail');
@@ -67,9 +81,6 @@ function checkId() {
 	} )
 	.catch( error => console.log(error) )
 }
-
-
-
 
 
 
@@ -137,3 +148,130 @@ function checkId() {
 // })
 //     .catch((error) => console.log(error));
 // }
+
+
+function deletealert() {
+	if(confirm('삭제하시겠습니까?')) {
+		alert('삭제 완료 하였습니다.');
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+
+/* 삭제처리 ajax 통신 방식 처리
+
+리스트 페이지 (main 영역에)
+<div class="card" id="card<?php echo $item["id"] ?>">
+
+자바스크립트 삭제 처리
+function deleteCard() {
+	const B_PK = document.querySelect('#del_id).value;
+	const URL = '/board/remove?id=' + B_PK;
+	fetch(URL)
+	.then( response => response.json() )
+	.then ( data => {
+		if(data.errflg === "0") {
+			// 모달 닫기
+			closeDetailModal();
+
+			// 카드 삭제
+			const MAIN = document.querySelector('main;)
+			const CARD_NAME = '#card' + data.id
+			const DEL_CARD = document.querySelector('CARD_NAME');
+			MAIN.removeChild(DEL_CARD);
+		} else {
+			alert(data.msg);
+		}
+	})
+	.catch( error => console.log(error) )
+}
+
+// 자바 삭제 버튼 표식 처리
+	자바 상세 모달 요소 데이터셋팅 영역에 접근해야함
+	const BTN_DEL = document.querySelector('#btn_del);  
+
+	if(data.data.flg === "1") {
+		BTN_DEL.classList.remove('d-none');
+	} else {
+		BTN_DEL.classList.add('d-none');
+			}
+
+
+
+
+// 라우터 부분
+else if($url === "board/remove") {
+		if($method === "GET") {
+			new BoardController("removeGet");
+		}
+
+// 보드 컨트롤러부분 
+
+// 삭제 처리 api
+protected function removeGet() {
+	$errFlg = "0";
+	$errMsg = "";
+	$arrDeletBoardInfo = [
+		"id" => $_GET["id"]
+		,"u_pk" => $_SESSION["u_pk"]
+	];
+
+	// 삭제 처리 부분
+	$boardModel = new BoardModel();
+	$boardModel->beginTransaction()
+	$result = $boardModel->removeBoardCard($arrDeletBoardInfo);
+	if($result !== 1) {
+		$errFlg = "1";
+		$errMsg = "삭제 처리 이상";
+		$boardModel->rollBack();
+	} else {
+		$boardModel->commit;
+	}
+	$boardModel->destroy();
+
+	//레스폰스 데이터 작성
+	$arrTmp = [
+		"errflg" => $errFlg
+		,"msg" => "$errMsg"
+		,"id" => $arrDeletBoardInfo["id"]
+	];
+	$response = json_encode($arrTmp);
+
+	//response 처리
+	header('Content-type : application/json')
+	echo $response;
+	exit();
+}
+
+ // 보드 모델 부분
+
+	public function removeBoardCard($arrDeleteBoardInfo) {
+		$sql =
+			" UPDATE board "
+			." SET "
+			." deleted_At = NOW() "
+			." WHERE "
+			." id = :id "
+			." AND u_pk = :u_pk "
+			;
+
+			$prepare = [
+				":id" => $arrDeleteBoardInfo["id"]
+				,":u_pk" => $arrDeleteBoardInfo["u_pk"]
+			];
+		try {
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute($prepare);
+			$result = $stmt->rowCount(); // 쿼리에 영향을 받은 레코드 수를 반환
+			return $result;
+		} catch(Exception $e) {
+			echo"BoardModel->removeBoardCard Error : ".$e->getMessage();
+			exit();
+		}
+	}
+
+
+*/

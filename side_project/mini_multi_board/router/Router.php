@@ -60,7 +60,12 @@ class Router {
 			if($method === "GET") {
 				new UserController("idchkGet");
 			}
+		} else if($url === "board/delete") {
+			if($method === "GET") {
+				new BoardController("deleteGet");
+			}
 		} 
+
 		// router 조건 $url === "/user/idchk" else if문 작성
 		// else if($url === "/user/idchk") {
 		// if($method === "GET") {

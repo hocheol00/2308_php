@@ -40,24 +40,28 @@
   <!-- Modal -->
   <div class="modal fade" id="modalDetail" tabindex="-1" aria-hidden="true">
 	<div class="modal-dialog">
+	<form action="delete" method="GET">
 	  <div class="modal-content">
 		<div class="modal-header">
-		  <h5 class="modal-title" id="b_title">개발자입니다</h5>
-		  <button type="button" onclick="closeDetailModal(); return false;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		</div>
-		<div class="modal-body">
-		  <p>작성일 :<span id="created_at"></span></p>
-		  <p>수정일 :<span id="updated_at"></span></p>
-		  <br><br>
-		  <span id="b_content">살려주세요</span>
-		 
-		  <br><br>
-		  <img id="b_img" src="" claas="card-img-top" alt="">
-		</div>
-		<div class="modal-footer">
-		  <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<h5 class="modal-title" id="b_title">개발자입니다</h5>
+				<button type="button" onclick="closeDetailModal(); return false;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+				<p>작성일 :<span id="created_at"></span></p>
+				<p>수정일 :<span id="updated_at"></span></p>
+				<br><br>
+				<span id="b_content">살려주세요</span>
+				<br><br>
+				<img id="b_img" src="" class="card-img-top" alt="">
+				</div>
+				<div class="modal-footer">
+				<input type="hidden" name="id" id="deleteId">
+				<button type="submit" id="btn-delete" onclick="return deletealert();" class="btn btn-primary me-auto p-2 bd-highlight" data-bs-dismiss="modal">삭제</button>
+				<button type="button" onclick="closeDetailModal(); return false;" class="btn btn-primary p-2 bd-highlight" data-bs-dismiss="modal">수정</button>
+				<button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary p-2 bd-highlight" data-bs-dismiss="modal">닫기</button>
 		</div>
 	  </div>
+	  </form>	
 	</div>
   </div>
 

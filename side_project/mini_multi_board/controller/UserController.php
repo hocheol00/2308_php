@@ -42,6 +42,8 @@ class UserController extends ParentsController{ //상속받고있는 클래스 �
 
 		//세션에 u_id 저장
 		$_SESSION["u_pk"] = $resultUserInfo[0]["id"];
+		$_SESSION["u_name"] = $resultUserInfo[0]["u_name"];
+
 
 		return "Location: /board/list?b_type=0";
 	}
@@ -61,9 +63,9 @@ class UserController extends ParentsController{ //상속받고있는 클래스 �
 	protected function registGet() {
 		return "view/regist"._EXTENSION_PHP;
 	}
+	
 
 	// 아이디 중복 확인
-	
 	protected function idchkGet() {
 		$id = $_GET["u_id"];
 

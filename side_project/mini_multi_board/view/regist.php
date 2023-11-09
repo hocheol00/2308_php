@@ -16,7 +16,7 @@
 			</div>
 			<div class="mb-3">
 			  <label for="u_id" class="form-label">아이디</label>
-			  <input type="text" class="form-control w-100" id="u_id" name="u_id" minlength="8" maxlength="20">
+			  <input type="text" class="form-control w-100" id="u_id" name="u_id" minlength="8" maxlength="20" autocomplete="off">
 			  <button type="button" class="btn btn-dark" onclick="checkId(); return false;">아이디 중복확인</button>
 			  <span id="idChkMsg"></span>
 			</div>
@@ -30,7 +30,7 @@
 			</div>
 			<div class="mb-3">
 			  <label for="u_name" class="form-label">이름</label>
-			  <input type="text" class="form-control" id="u_name" name ="u_name" minlength="1" maxlength="50">
+			  <input type="text" class="form-control" id="u_name" name ="u_name" minlength="1" maxlength="50" autocomplete="off">
 			</div>
 			<a href="/user/login" class="btn btn-dark">취소</a>
 			<button type="submit" class="btn btn-dark float-end">가입</button>

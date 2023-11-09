@@ -1,7 +1,7 @@
 <header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container-fluid">
-			  <a class="navbar-brand" href="#">빵빵이와친구들</a>
+			  <a class="navbar-brand">빵빵이 게시판</a>
 			  <?php if($this->controllerChkUrl !== "user/login" && $this->controllerChkUrl !== "user/regist") { ?>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -23,6 +23,7 @@
 					</ul>
 				  </li>
 				</ul>
+				<span class="text-success"><?php echo isset($_SESSION["u_name"]) ? ($_SESSION["u_name"]) : ""; ?></span>
 				<a href="/user/logout" class="nav-link text-light" role="button">로그아웃</a>
 			  </div>
 			  <?php } ?>

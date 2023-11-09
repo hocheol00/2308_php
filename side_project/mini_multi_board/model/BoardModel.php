@@ -100,5 +100,29 @@ class BoardModel extends ParentsModel {
 			}
 		}
 
+	// 삭제 페이지
 
+	public function boardDelete($id) {
+		$sql =
+		" UPDATE "
+		." board "
+		." SET "
+		." deleted_at = NOW() "
+		." WHERE "
+		." id = :id "
+		;
+
+		$prepare = [
+			":id" => $id
+		];
+
+		try {
+			$stmt = $this->conn->prepare($sql);
+			$result = $stmt->execute($prepare);
+			return $result;
+		} catch(Exception $e) {
+			echo"BoardModel->boardDelete Error : ".$e->getMessage();
+			exit();
+		}
+	}
 }
