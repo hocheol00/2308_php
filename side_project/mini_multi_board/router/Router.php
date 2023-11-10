@@ -17,7 +17,7 @@ class Router {
 		//			ex) 리스트 : 호스트/board/list
 		//			ex) 수정 : 호스트/board/edit
 
-		$url = $_GET["url"]; //접속 URL 획득
+		$url = $_GET["url"]; //접속 URL 획득 겟메소드로 처리되는 애들을 담는거
 		$method = $_SERVER["REQUEST_METHOD"]; //메소드 획득
 
 		//로그인 페이지 get of post
