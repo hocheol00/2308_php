@@ -105,7 +105,7 @@ class BoardController extends ParentsController {
 			,"data" => $result[0]
 			,"flg" => $flg
 		];
-		$response = json_encode($arrTmp);
+		$response = json_encode($arrTmp); // response 데이터를 받아서 js 에서 쓸려고 json 형식으로 바꾼것
 
 		//respone 처리
 		header('Content-type: application/json');
