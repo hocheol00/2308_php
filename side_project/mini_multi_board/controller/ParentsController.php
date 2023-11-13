@@ -22,7 +22,7 @@ class ParentsController {
 		// thid 정의 : 맴버변수를 쓰기위해 this를 사용한다
 
 		//세션 시작
-		if(!isset($_SESSION)) {
+		if(!isset($_SESSION)) { //isset 어떤 조건이 있는지 없는지
 			session_start();
 		}
 

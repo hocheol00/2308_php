@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('failed_jobs', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid')->unique();
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+            $table->char('no', 1)->uniqid(); // 캐릭터1의(넘버) 유니크 제약조건이 들어간것(중복이 안되기 위해)
+            $table->string('name', 20)->uniqid(); //게시판 이름 // name이라는 컬럼명에ㅐ varchar(20)
+            $table->softDeletes();
         });
     }
 
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_jobs');
+        Schema::dropIfExists('categories');
     }
 };

@@ -99,6 +99,9 @@ Route::get('/name/home/php504/user', function () {
 })->name('name.user');
 
 
+
+
+
 //---------------------
 // 컨트롤러
 // 커맨드로 컨트롤러 생성 : php artisan make:controller 컨트롤러명
@@ -111,9 +114,28 @@ Route::resource('/task', TaskController::class);
 
 
 //GET|HEAD        task .................... task.index › TaskController@index 
-//POST            task .................... task.store › TaskController@store 
-//GET|HEAD        task/create ............. task.create › TaskController@create 
+//POST            task .................... task.store › TaskController@store //작성이 된것
+//GET|HEAD        task/create ............. task.create › TaskController@create // 작성 페이지로 가는거
 //GET|HEAD        task/{task} ............. task.show › TaskController@show 
 //PUT|PATCH       task/{task} ............. task.update › TaskController@update 
 //DELETE          task/{task} ............. task.destroy › TaskController@destroy 
 //GET|HEAD        task/{task}/edit ........ task.edit › TaskController@edit
+
+
+
+// --------------
+// 블레이드 템플릿 이동관련 (child 파일 불러오기)
+Route::get('/child1', function(){  // 라우트 겟에 열고싶은 파일 설정
+    return view('child1')->with('gender', '0');
+     // 리턴값에 뷰안에 있는 차일드 폴더 열기 경로 설정
+});
+
+Route::get('/child2', function(){
+    $arr = [
+        'name' => '신호철'
+        ,'age' => 27
+        ,'gender' => '상남자'
+    ];
+    $arr2 = [];
+    return view('child2')->with('data', $arr)->with('data2', $arr2);
+});
