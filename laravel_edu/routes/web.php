@@ -139,3 +139,9 @@ Route::get('/child2', function(){
     $arr2 = [];
     return view('child2')->with('data', $arr)->with('data2', $arr2);
 });
+
+
+
+// DB관련 실습용
+use App\Http\Controllers\BoardController;
+Route::get('/boards', [BoardController::class, 'index'])->name('board.index');
