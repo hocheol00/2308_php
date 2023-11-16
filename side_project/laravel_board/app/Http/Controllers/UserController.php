@@ -20,19 +20,20 @@ class UserController extends Controller
         return view('login');
     }
     public function loginpost(Request $request) { // 로그인 창
-        // 유효성 검사
-        $validator = Validator::make(
-            $request->only('email', 'password') // 아이디 비밀번호
-            ,[ 
-                'email' => 'required|email|max:50' 
-                ,'password' => 'required'
-            ]
-        );
+        //  ** del 1116 미들웨어로 이관
+        // // 유효성 검사
+        // $validator = Validator::make(
+        //     $request->only('email', 'password') // 아이디 비밀번호
+        //     ,[ 
+        //         'email' => 'required|email|max:50' 
+        //         ,'password' => 'required'
+        //     ]
+        // );
 
-        //유효성 검사 실패시 (호)처리
-        if($validator->fails()){
-            return view('login')->withErrors($validator->errors());
-        }
+        // //유효성 검사 실패시 (호)처리
+        // if($validator->fails()){
+        //     return view('login')->withErrors($validator->errors());
+        // }
 
         //유저 정보 습득
         $result = User::where('email', $request->email)->first();
@@ -57,21 +58,22 @@ class UserController extends Controller
         return view('registration')->with('error', []);
     }
     public function registrationpost(Request $request) { // 회원가입 페이지
+        //  ** del 1116 미들웨어로 이관
         // 유효성 검사
-        $validator = Validator::make(
-            $request->only('email', 'password', 'passwordchk', 'name')
-            ,[
-                'email' => 'required|email|max:50'
-                ,'name' => 'required|regex:/^[a-zA-Z가-힣]+$/|min:2|max:50' // regex 정규식 이름
-                ,'password' => 'required|same:passwordchk' 
-            ]
-        );
-        // var_dump($validator->errors()); //바덤프로 에러메세지 확인
+        // $validator = Validator::make(
+        //     $request->only('email', 'password', 'passwordchk', 'name')
+        //     ,[
+        //         'email' => 'required|email|max:50'
+        //         ,'name' => 'required|regex:/^[a-zA-Z가-힣]+$/|min:2|max:50' // regex 정규식 이름
+        //         ,'password' => 'required|same:passwordchk' 
+        //     ]
+        // );
+        // // var_dump($validator->errors()); //바덤프로 에러메세지 확인
 
-        //유효성 검사 실패시 (호)처리
-        if($validator->fails()){
-            return view('registration')->withErrors($validator->errors());
-        }
+        // //유효성 검사 실패시 처리
+        // if($validator->fails()){
+        //     return view('registration')->withErrors($validator->errors());
+        // }
 
 
         // 데이터 베이스에 저장할 데이터 획득
