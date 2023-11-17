@@ -122,6 +122,7 @@ class BoardController extends Controller
         
     }
     
+
     /**
      * Remove the specified resource from storage.
      *
