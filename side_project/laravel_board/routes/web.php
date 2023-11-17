@@ -37,13 +37,13 @@ Route::get('/user/logout', [UserController::class, 'logoutget'])->name('user.log
 // 보드관련
 Route::middleware('auth')->resource('/board',BoardController::class);
 // 유효성 체크같은 공통된 처리를 미들웨어로 처리 할수있다 ('auth')
-//   GET|HEAD        board ...................................... board.index › BoardController@index
-//   POST            board ...................................... board.store › BoardController@store // 글작성 보내주는거
-//   GET|HEAD        board/create ............................. board.create › BoardController@create // 인서트 페이지 보여지는거
-//   GET|HEAD        board/{board} ................................ board.show › BoardController@show
-//   PUT|PATCH       board/{board} ............................ board.update › BoardController@update
-//   DELETE          board/{board} .......................... board.destroy › BoardController@destroy
-//   GET|HEAD        board/{board}/edit ........................... board.edit › BoardController@edit
+//   GET|HEAD        board ...................................... board.index › BoardController@index  게시판 화면이동
+//   GET|HEAD        board/create ............................. board.create › BoardController@create  게시글 create 화면이동
+//   POST            board ...................................... board.store › BoardController@store  게시글 insert 처리
+//   GET|HEAD        board/{board} ................................ board.show › BoardController@show  게시글 detail 화면이동
+//   DELETE          board/{board} .......................... board.destroy › BoardController@destroy  게시글 delete 처리
+//   GET|HEAD        board/{board}/edit ........................... board.edit › BoardController@edit  게시글 update 화면이동
+//   PUT|PATCH       board/{board} ............................ board.update › BoardController@update  게시글 update 처리
 
 
 

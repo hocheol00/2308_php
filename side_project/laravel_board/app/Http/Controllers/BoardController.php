@@ -91,7 +91,9 @@ class BoardController extends Controller
      */
     public function edit($id)
     {
-        //
+        $result = Board::find($id);
+
+        return view('update')->with('data', $result);
     }
 
     /**
@@ -103,7 +105,20 @@ class BoardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $result = Board::find($id);
+        $result->update([
+            'b_title' => $request->input('b_title'),
+            'b_content' => $request->input('b_content')
+        ]);
+        // $result->b_title = $request->b_title;  성찬이 방법 // 대신 업데이트문의 태그 네임을 같이 지정해놔야한다
+        // $result->b_content = $request->b_content;
+        // return redirect()->route('board.show', ['board' => $result->b_id]); 변경후 디테일 페이지로
+        $result->save();
+        return redirect()->route('board.index');
+       
+        // $model = new Board($arrInpuDate); 
+        // $model->save();
+        
     }
 
     /**
@@ -114,7 +129,7 @@ class BoardController extends Controller
      */
     public function destroy($id)
     {
-        DB::beginTransaction();
+        // DB::beginTransaction();
         $result = Board::find($id);
         $result->delete();
         return redirect()->route('board.index');

@@ -23,12 +23,13 @@
 		</div>
 		<div class="mb-3">
 			<p>작성일</p>
-			<p>{{$data->b_created_at}}</p>
+			<p>{{$data->created_at}}</p>
 		</div>
 		<div class="mb-3">
 			<p>수정일</p>
-			<p>{{$data->b_updated_at}}</p>
+			<p>{{$data->updated_at}}</p>
 			<a href="{{route('board.index')}}" class="btn btn-secondary">취소</a>
+			<a href="{{route('board.edit', ['board' => $data->b_id])}}" class="btn btn-secondary">수정</a>
 			<button type="submit" class="text-light btn btn-primary">삭제</button>
 		</div>
 	</form>
