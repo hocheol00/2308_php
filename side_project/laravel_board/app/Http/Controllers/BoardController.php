@@ -115,12 +115,13 @@ class BoardController extends Controller
         // return redirect()->route('board.show', ['board' => $result->b_id]); 변경후 디테일 페이지로
         $result->save();
         return redirect()->route('board.index');
-       
+    
+        
         // $model = new Board($arrInpuDate); 
         // $model->save();
         
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
