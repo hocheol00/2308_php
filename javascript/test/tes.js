@@ -8,7 +8,61 @@
 function getItem() {
   fetch("http://localhost:8000/api/item") // 패치가 서버 리퀘스트 날리는거 url을 적어야함
     .then(response => response.json()) // 레스폰스를 제이슨 형태로 바꾼는것 => 는 리턴이다
-    .then(data => console.log(data))
+    .then(data => {
+      let content = data.data[0].content;
+      // JSON 데이터 내에 date 0번 인덱스의 content
+      let cp = document.createElement('p');
+      cp.innerHTML = content;
+      document.body.appendChild(cp);
+  })
     .catch(error => console.log(error));
   return false;
+}
+
+
+// 게시글 작성
+function addItem() {
+  fetch('http://localhost:8000/api/item', {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        "data": {
+          "content": "잘하고싶다.!!"
+        }
+    })
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error))
+}
+
+//  게시글 수정
+function updatedItem() {
+  fetch('http://localhost:8000/api/item/1',{
+    method: 'PUT',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      "data": {
+        // "content": "변경했습니다.!!"
+        "completed": "1"
+      }
+  })
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error))
+}
+
+//  게시글 삭제
+function deletedItem() {
+  fetch('http://localhost:8000/api/item/1',{
+    method: 'DELETE',
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error))
 }
