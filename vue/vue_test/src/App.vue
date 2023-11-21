@@ -6,10 +6,10 @@
 <!-- 자세히 모달 -->
 <div class="bg_black" v-if="modalFlg">
   <div class="bg_white">
-    <h3>{{products[id].name}}</h3>
-    <p>{{products[id].characteristic}}</p>
-    <p>{{products[id].main_line}}</p>
-    <h4>{{products[id].price}}</h4>
+    <h3>{{modalproducts.name}}</h3>
+    <p>{{modalproducts.characteristic}}</p>
+    <p>{{modalproducts.main_line}}</p>
+    <h4>{{modalproducts.price}}</h4>
     <button @click="modalFlg = false">취 소</button>
   </div>
 </div>
@@ -22,7 +22,7 @@
     <p>{{item.characteristic}}</p>
     <p>{{item.main_line}}</p>
     <h4>{{item.price}}</h4>
-    <button @click="modalFlg = ture">자세히</button>
+    <button @click="modalOpen(item)">자세히</button>
   </div>
 </div>
 
@@ -51,11 +51,16 @@ export default {
     } 
   },
 
-  method: {
+  methods: {
     modalOpen(item) {
       this.modalFlg = true;
+      // this.modalproducts = item;
       this.modalproducts = item;
     },
+
+   modalClose() {
+      this.modalFlg = false;
+    }
   }
 }
 </script>
