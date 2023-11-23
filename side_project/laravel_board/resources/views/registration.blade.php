@@ -23,7 +23,7 @@
 		  </div>
 		  <div class="mb-3">
 			<label for="name" class="form-label">이름</label>
-			<input type="text" class="form-control w-100" id="name" name="name">
+			<input type="text" class="form-control w-100" id="name" name="name" autocomplete="off">
 		  </div>
 		<a href="{{route('user.login.get')}}" class="btn btn-dark">취소</a>
 		<button type="submit" class="btn btn-dark float-end">회원가입</button>
