@@ -11,6 +11,7 @@ const store = createStore({
 			imgURL: '',
 			postFileData: null,
 			lastBoardId: 0, // 가장 마지막 로드 된 게시글 번호 저장용
+			flgBtnMoreView: true, // 더보기 버튼 활성여부 플래그
 		}
 	},
 	// mutations : 데이터 수정용 함수 저장 영역
@@ -35,19 +36,23 @@ const store = createStore({
 			state.boardData.unshift(data);
 			// unshift 배열 내 데이터를 [0] 방 부터 추가 삽입
 		},
+		// 작성 후 최기화 처리
+		setClearAddData(state) {
+			state.imgURL = '';
+			state.postFileData = null;
+		},
 		// 더보기 버튼
 		setPushBoard(state, data) {
 			state.boardData.push(data);
 			console.log(data);
 			state.lastBoardId = data.id;
 		},
-		// 작성 후 최기화 처리
-		setClearAddData(state) {
-			state.imgURL = '';
-			state.postFileData = null;
-		},
+		// 더보기 버튼 활성화
+		setflgBtnMoreView(state, boo) {
+			state.flgBtnMoreView = boo;
+		}
 	},
-	// actions: ajax로 서버에 데이터를 요청할 때나 시간 함수등 비동기 처리는 actions에 정의
+	// actions: ajax로 서버에 데이터를 요청할 때나 시간 함수등 비동기 처리는 actions에 정의 , 외부에서 받아오는데이터
 	actions: {
 		// 초기 게시글 데이터 획득 ajax 처리
 		actionGetBoardList(context) { // actions 첫번째 파라미터 context 이름 고정
@@ -104,12 +109,16 @@ const store = createStore({
 			};
 			axios.get(url, header)
 			.then(res => {
-				context.commit('setPushBoard', res.data);
+				if(res.data) {
+					context.commit('setPushBoard', res.data);
+				} else {
+					context.commit('setflgBtnMoreView', false);
+				}
 			})
 			.catch(err => {
 				console.log(err);
 			})
-		}
+		} 
 
 	}
 });

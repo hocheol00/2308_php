@@ -18,7 +18,9 @@
   <ContainerComponent></ContainerComponent>
 
   <!-- 더보기 버튼 -->
-  <button @click="actionGetBoardplus()">더보기</button>
+  <button
+      @click="actionGetBoardplus()"
+      v-if="$store.state.flgBtnMoreView && $store.state.flgTapUI === 0">더보기</button>
 
   <!-- 푸터 -->
   <div class="footer">
