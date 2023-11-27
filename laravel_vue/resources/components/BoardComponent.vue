@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-	name: 'App',
+	name: 'BoardComponent',
 }
 </script>
 <style>
