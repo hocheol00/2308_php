@@ -1,5 +1,5 @@
 import { createStore } from 'vuex';
-import axios from 'axios';
+import axios from 'axios'; //ajax통신을 위한 라이브러리 기술
 
 
 const store = createStore({
