@@ -1,25 +1,20 @@
 <template>
 	<div id="wrapper">
 		<HeaderComponent></HeaderComponent>
-		<!-- <router-view></router-view> --> 
-		<MainComponent></MainComponent>
-
+		<router-view></router-view> 
 		<FooterComponent></FooterComponent>
 	</div>
 </template>
 
 <script>
-import HeaderComponent from './HeaderComponent.vue';
-import FooterComponent from './FooterComponent.vue';
-import MainComponent from './MainComponent.vue';
+import HeaderComponent from '../components/HeaderComponent.vue';
+import FooterComponent from '../components/FooterComponent.vue';
 
 export default {
 	name: 'AppComponent',
-	
 	components: {
 		HeaderComponent,
 		FooterComponent,
-		MainComponent,
 	}
 }
 </script>
