@@ -1,6 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
 import MainComponent from '../components/MainComponent.vue';
 import DetailComponent from '../components/DetailComponent.vue';
+import LoginComponent from '../components/LoginComponent';
+import RegistComponent from '../components/RegistComponent';
 
 const routes = [
 	{
@@ -14,6 +16,14 @@ const routes = [
 	{
 		path: '/detail/:id',
 		component: DetailComponent,
+	},
+	{
+		path: '/login',
+		component: LoginComponent,
+	},
+	{
+		path: '/regist',
+		component: RegistComponent,
 	},
 ];
 

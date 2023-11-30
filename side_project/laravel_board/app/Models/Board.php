@@ -11,11 +11,12 @@ class Board extends Model
 {
     use HasFactory, softDeletes;
 
-    protected $primaryKey = 'b_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
-        'b_title',
-        'b_content'
+        'name',
+        'content',
+        'img'
     ];
 
 }

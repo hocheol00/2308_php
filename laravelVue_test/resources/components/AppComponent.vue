@@ -1,8 +1,8 @@
 <template>
 	<div id="wrapper">
-		<HeaderComponent></HeaderComponent>
+		<HeaderComponent v-if="$store.state.flgTapUI === 0"></HeaderComponent>
 		<router-view></router-view> 
-		<FooterComponent></FooterComponent>
+		<FooterComponent v-if="$store.state.flgTapUI === 0"></FooterComponent>
 	</div>
 </template>
 

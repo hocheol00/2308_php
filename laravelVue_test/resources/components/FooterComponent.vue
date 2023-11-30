@@ -3,23 +3,12 @@
 		<footer id="footer">
 			<div class="inner">
 				<section>
-					<h2>Get in touch</h2>
-					<form method="post" action="#">
-						<div class="fields">
-							<div class="field half">
-								<input type="text" name="name" id="name" placeholder="Name" />
-							</div>
-							<div class="field half">
-								<input type="email" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="field">
-								<textarea name="message" id="message" placeholder="Message"></textarea>
-							</div>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send" class="primary" /></li>
-						</ul>
-					</form>
+					<h2>우아한 가구</h2>
+					<br>
+					<h5>서비스이용약관  개인정보처리방침  제휴문의  고객센터</h5>
+					<h6>㈜호구 / 대표: 신호철 / 대표번호: 00-000-0000</h6>
+					<h5>감성특별시 요즘가구 어디로</h5>
+					
 				</section>
 				<section>
 					<h2>Follow</h2>

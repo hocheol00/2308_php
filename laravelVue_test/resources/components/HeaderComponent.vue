@@ -3,9 +3,9 @@
 	<header id="header">
 		<div class="inner">
 		<!-- Logo -->
-			<a href="index.html" class="logo">
-				<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">요즘 감성, 요즘 가구</span>
-			</a>
+			<router-link to="/main" class="logo">
+				<span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title">요즘 감성, 요즘 가구</span>
+			</router-link>
 		<!-- Nav -->
 			<nav>
 				<ul>
@@ -20,7 +20,7 @@
 		<h2>Menu</h2>
 		<ul>
 			<li><router-link to="/main">HOME</router-link></li>
-			<li><router-link to="/main">login</router-link></li>
+			<li><router-link to="/login">login</router-link></li>
 		</ul>
 	</nav>
 </template>

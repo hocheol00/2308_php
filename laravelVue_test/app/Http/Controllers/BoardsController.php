@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Board;
 class BoardsController extends Controller
 {
     /**
@@ -32,9 +32,9 @@ class BoardsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        
     }
 
     /**
@@ -45,7 +45,10 @@ class BoardsController extends Controller
      */
     public function show($id)
     {
-        //
+        $result = Board::where('id', $id) // 조건 주는법
+            ->select('name', 'content', 'img')
+            ->first();
+        return $result;
     }
 
     /**

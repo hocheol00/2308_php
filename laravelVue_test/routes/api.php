@@ -18,7 +18,8 @@ use App\Http\Controllers\BoardsController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::middleware('apiChkToken')->prefix('boards')->group(function() {
+Route::prefix('boards')->group(function() {
     // Route::get('/', [BoardsController::class, 'index']);
     Route::get('/{board}', [BoardsController::class, 'show']);
 });
+// Route::get('/{board}', [BoardsController::class, 'show']);
