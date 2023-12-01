@@ -1,6 +1,7 @@
 // vuex 기본형태
 import { createStore } from 'vuex';
 import axios from 'axios'; //ajax통신을 위한 라이브러리 기술
+import router from './router';
 
 const store = createStore({
     state() { // state : data 저장영역
@@ -8,6 +9,7 @@ const store = createStore({
           boardData: [], // 게시글 저장용
           flgTapUI: 0, // 탭ui용 플래그
           // BoardId: null,
+          saveData: {},
         }
     },
     // mutations : 데이터 수정용 함수 저장 영역
@@ -21,6 +23,10 @@ const store = createStore({
       //  탭ui 셋팅요
 		setFlgTapUI(state, num) {
 			state.flgTapUI = num;
+    },
+    loginSubmit(state, saveData) {
+      saveData.userId = this.userId;
+      saveData.userPassword = this.userPassword;
 		},
 
     },
@@ -32,6 +38,31 @@ const store = createStore({
         .then(res => {
           context.commit('setBoardList', res.data);
           // console.log(res.data);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+      },
+
+      actionLogin(context) {
+        let id = document.querySelector('#email').value;
+			  let pw = document.querySelector('#password').value;
+
+        const url = "/api/login"
+        const header = {
+          headers: {
+              "Content-Type": 'application/json',
+          },
+        }
+        // stringfy로 js배열이나 객체를 json형태로 바꿀수 있을걸여~?
+        const formData = new FormData();
+        formData.append('email', id)
+        formData.append('password', pw)
+
+        axios.post(url,formData,header)
+        .then(res => {
+          console.log(res.data.data);
+          
         })
         .catch(err => {
           console.log(err);

@@ -1,4 +1,14 @@
 <template>
+	
+	<!-- Menu -->
+	<nav id="menu">
+		<h2>Menu</h2>
+		<ul>
+			<li><router-link to="/main">HOME</router-link></li>
+			<li><router-link to="/login">login</router-link></li>
+		</ul>
+	</nav>
+	
 	<!-- Header -->
 	<header id="header">
 		<div class="inner">
@@ -15,14 +25,6 @@
 		</div>
 	</header>
 
-	<!-- Menu -->
-	<nav id="menu">
-		<h2>Menu</h2>
-		<ul>
-			<li><router-link to="/main">HOME</router-link></li>
-			<li><router-link to="/login">login</router-link></li>
-		</ul>
-	</nav>
 </template>
 <script>
 export default {

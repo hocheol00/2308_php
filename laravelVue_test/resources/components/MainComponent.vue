@@ -48,6 +48,9 @@
 <script>
 export default {
 	name: 'MainComponent',
+	created() {
+		this.$store.commit('setFlgTapUI', 0);
+	}
 }
 </script>
 <style>

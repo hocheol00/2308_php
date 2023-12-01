@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BoardsController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,6 @@ Route::prefix('boards')->group(function() {
     // Route::get('/', [BoardsController::class, 'index']);
     Route::get('/{board}', [BoardsController::class, 'show']);
 });
+Route::post('/login', [UserController::class, 'login']);
+Route::post('/registe', [UserController::class, 'registe']);
 // Route::get('/{board}', [BoardsController::class, 'show']);
